@@ -1785,23 +1785,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Tiago\\.nuget\\packages\\": {},
+    "C:\\Users\\DARIO\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\VisualStudio\\ClubDeportivo\\ClubDeportivo\\ClubDeportivo.csproj",
+      "projectUniqueName": "C:\\Users\\DARIO\\source\\repos\\ClubDeportivo\\ClubDeportivo\\ClubDeportivo.csproj",
       "projectName": "ClubDeportivo",
-      "projectPath": "E:\\VisualStudio\\ClubDeportivo\\ClubDeportivo\\ClubDeportivo.csproj",
-      "packagesPath": "C:\\Users\\Tiago\\.nuget\\packages\\",
-      "outputPath": "E:\\VisualStudio\\ClubDeportivo\\ClubDeportivo\\obj\\",
+      "projectPath": "C:\\Users\\DARIO\\source\\repos\\ClubDeportivo\\ClubDeportivo\\ClubDeportivo.csproj",
+      "packagesPath": "C:\\Users\\DARIO\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\DARIO\\source\\repos\\ClubDeportivo\\ClubDeportivo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Tiago\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\DARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1810,7 +1810,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1853,7 +1852,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
