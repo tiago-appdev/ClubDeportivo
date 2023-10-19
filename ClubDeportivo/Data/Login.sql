@@ -6,7 +6,7 @@ BEGIN
     SELECT
         Is_admin
     FROM
-        usuarios u
+        Usuarios u
     WHERE
         Username = Usu
         AND PASSWORD = Pass;

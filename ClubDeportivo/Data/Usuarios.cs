@@ -18,7 +18,7 @@ namespace ClubDeportivo.Datos
             MySqlConnection sqlCon = new();
             try
             {
-                sqlCon = Conexion.getInstancia().crearConexion();
+                sqlCon = Conexion.GetInstancia().CrearConexion();
                 // el comando es un elemento que almacena en este caso el nombre
                 // del procedimiento almacenado y la referencia a la conexion
 
