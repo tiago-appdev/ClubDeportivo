@@ -31,6 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             lblIngreso = new Label();
             btnSalir = new Button();
+            btnRegistrar = new Button();
+            btnPagarCuota = new Button();
+            btnNN = new Button();
+            btnNN2 = new Button();
             SuspendLayout();
             // 
             // lblIngreso
@@ -38,9 +42,9 @@
             lblIngreso.AutoSize = true;
             lblIngreso.Location = new Point(73, 32);
             lblIngreso.Name = "lblIngreso";
-            lblIngreso.Size = new Size(38, 15);
+            lblIngreso.Size = new Size(34, 15);
             lblIngreso.TabIndex = 0;
-            lblIngreso.Text = "label1";
+            lblIngreso.Text = "USER";
             // 
             // btnSalir
             // 
@@ -52,12 +56,53 @@
             btnSalir.UseVisualStyleBackColor = true;
             btnSalir.Click += btnSalir_Click;
             // 
+            // btnRegistrar
+            // 
+            btnRegistrar.Location = new Point(73, 136);
+            btnRegistrar.Name = "btnRegistrar";
+            btnRegistrar.Size = new Size(231, 48);
+            btnRegistrar.TabIndex = 2;
+            btnRegistrar.Text = "REGISTRAR CLIENTE";
+            btnRegistrar.UseVisualStyleBackColor = true;
+            btnRegistrar.Click += btnRegistrar_Click;
+            // 
+            // btnPagarCuota
+            // 
+            btnPagarCuota.Location = new Point(513, 136);
+            btnPagarCuota.Name = "btnPagarCuota";
+            btnPagarCuota.Size = new Size(231, 48);
+            btnPagarCuota.TabIndex = 3;
+            btnPagarCuota.Text = "PAGAR CUOTA";
+            btnPagarCuota.UseVisualStyleBackColor = true;
+            // 
+            // btnNN
+            // 
+            btnNN.Location = new Point(73, 265);
+            btnNN.Name = "btnNN";
+            btnNN.Size = new Size(231, 48);
+            btnNN.TabIndex = 4;
+            btnNN.Text = "NN";
+            btnNN.UseVisualStyleBackColor = true;
+            // 
+            // btnNN2
+            // 
+            btnNN2.Location = new Point(513, 265);
+            btnNN2.Name = "btnNN2";
+            btnNN2.Size = new Size(231, 48);
+            btnNN2.TabIndex = 5;
+            btnNN2.Text = "NN";
+            btnNN2.UseVisualStyleBackColor = true;
+            // 
             // frmMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(9, 179, 179);
             ClientSize = new Size(800, 450);
+            Controls.Add(btnNN2);
+            Controls.Add(btnNN);
+            Controls.Add(btnPagarCuota);
+            Controls.Add(btnRegistrar);
             Controls.Add(btnSalir);
             Controls.Add(lblIngreso);
             Icon = (Icon)resources.GetObject("$this.Icon");
@@ -73,5 +118,9 @@
 
         private Label lblIngreso;
         private Button btnSalir;
+        private Button btnRegistrar;
+        private Button btnPagarCuota;
+        private Button btnNN;
+        private Button btnNN2;
     }
 }

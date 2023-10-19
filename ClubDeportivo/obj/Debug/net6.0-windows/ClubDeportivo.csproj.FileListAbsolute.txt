@@ -35,3 +35,4 @@ E:\VisualStudio\ClubDeportivo\ClubDeportivo\bin\Debug\net6.0-windows\runtimes\br
 E:\VisualStudio\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0-windows\ClubDeportivo.csproj.AssemblyReference.cache
 E:\VisualStudio\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0-windows\ClubDeportivo.csproj.CopyComplete
 E:\VisualStudio\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0-windows\ClubDeportivo.frmMenu.resources
+E:\VisualStudio\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0-windows\ClubDeportivo.frmRegistro.resources

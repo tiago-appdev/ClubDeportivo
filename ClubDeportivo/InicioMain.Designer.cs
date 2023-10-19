@@ -64,6 +64,7 @@
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(288, 23);
             txtUsuario.TabIndex = 2;
+            txtUsuario.Tag = "";
             txtUsuario.Text = "USUARIO";
             txtUsuario.Enter += txtUsuario_Enter;
             txtUsuario.Leave += txtUsuario_Leave;
