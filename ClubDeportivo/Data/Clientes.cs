@@ -16,7 +16,7 @@ namespace ClubDeportivo.Datos
             MySqlConnection sqlCon = new();
             try
             {
-                sqlCon = Conexion.getInstancia().crearConexion();
+                sqlCon = Conexion.GetInstancia().CrearConexion();
                 MySqlCommand comando = new("RegistrarCliente", sqlCon)
                 {
                     CommandType = CommandType.StoredProcedure

@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net6.0-windows7.0": {
+      "DotEnv.Core/3.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/DotEnv.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/DotEnv.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Google.Protobuf/3.21.9": {
         "type": "package",
         "compile": {
@@ -546,6 +559,22 @@
     }
   },
   "libraries": {
+    "DotEnv.Core/3.0.0": {
+      "sha512": "RGSFfhh9N0kBw5vIuJ0vo0pxuirWfZnoPBRkB2/5Lx1IIdg3cd8frZxkPotn5ku8hZ6iiG+56ou2BcLZEHugVQ==",
+      "type": "package",
+      "path": "dotenv.core/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "README.md",
+        "dotenv-icon-nuget.png",
+        "dotenv.core.3.0.0.nupkg.sha512",
+        "dotenv.core.nuspec",
+        "lib/netstandard2.0/DotEnv.Core.dll",
+        "lib/netstandard2.0/DotEnv.Core.xml"
+      ]
+    },
     "Google.Protobuf/3.21.9": {
       "sha512": "OTpFujTgkmqMLbg3KT7F/iuKi1rg6s5FCS2M9XcVLDn40zL8wgXm37CY/F6MeOEXKjdcnXGCN/h7oyMkVydVsg==",
       "type": "package",
@@ -1781,6 +1810,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
+      "DotEnv.Core >= 3.0.0",
       "MySql.Data >= 8.1.0"
     ]
   },
@@ -1828,6 +1858,10 @@
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
         "dependencies": {
+          "DotEnv.Core": {
+            "target": "Package",
+            "version": "[3.0.0, )"
+          },
           "MySql.Data": {
             "target": "Package",
             "version": "[8.1.0, )"
