@@ -81,7 +81,7 @@
             // cmbTipo
             // 
             cmbTipo.FormattingEnabled = true;
-            cmbTipo.Items.AddRange(new object[] { "Cel.", "Tel." });
+            cmbTipo.Items.AddRange(new object[] { "Socio", "No Socio" });
             cmbTipo.Location = new Point(334, 286);
             cmbTipo.Name = "cmbTipo";
             cmbTipo.Size = new Size(97, 23);
@@ -162,6 +162,7 @@
             btnIngresar.TabIndex = 12;
             btnIngresar.Text = "INGRESAR";
             btnIngresar.UseVisualStyleBackColor = true;
+            btnIngresar.Click += btnIngresar_Click;
             // 
             // btnLimpiar
             // 
@@ -171,6 +172,7 @@
             btnLimpiar.TabIndex = 13;
             btnLimpiar.Text = "LIMPIAR";
             btnLimpiar.UseVisualStyleBackColor = true;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // btnVolver
             // 

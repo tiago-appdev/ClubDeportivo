@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ClubDeportivo.Datos;
 
 namespace ClubDeportivo
 {
     public partial class frmInicio : Form
     {
+        public static string usuario;
+        public static string rol;
         public frmInicio()
         {
             InitializeComponent();
@@ -54,23 +57,26 @@ namespace ClubDeportivo
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             DataTable tablaLogin = new DataTable(); // es la que recibe los datos desde el formulario
-            Datos.Usuarios dato = new Datos.Usuarios(); // variable que contiene todas las caracteristicas de la clase
+            Usuarios dato = new(); // variable que contiene todas las caracteristicas de la clase
             tablaLogin = dato.Log_Usu(txtUsuario.Text, txtPass.Text);
             if (tablaLogin.Rows.Count > 0)
             {
+                frmInicio.rol = Convert.ToInt32(tablaLogin.Rows[0][0]) == 1 ? "ADMINISTRATOR" : "USER";
+                frmInicio.usuario = Convert.ToString(txtUsuario.Text).ToUpper();
                 // quiere decir que el resultado tiene 1 fila por lo que el usuario EXISTE
                 MessageBox.Show("Ingreso exitoso", "Mensaje del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                frmMenu menuPrincipal = new frmMenu(); //Instanciamos el menu principal para mostrarlo.
-
-
-                menuPrincipal.rol = Convert.ToString(tablaLogin.Rows[0][0]);
-                menuPrincipal.usuario = Convert.ToString(txtUsuario.Text).ToUpper();
+                //Instanciamos el menu principal para mostrarlo.
+                frmMenu menuPrincipal = new()
+                {
+                    rol = frmInicio.rol,
+                    usuario = frmInicio.usuario
+                }; 
                 menuPrincipal.Show(); //Se muestra el menu principal
                 this.Hide(); // se oculta el formulario del login
             }
             else
             {
-                MessageBox.Show("Usuario y/o password incorrecto", "Mensaje del Sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                MessageBox.Show("Usuario y/o password incorrecto", "Mensaje del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }
