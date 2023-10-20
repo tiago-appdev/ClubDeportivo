@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="ClubDeportivo.Cliente">
+    <Position X="1.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEADAAgAAAAACAAAAgAAAAAgIAAAQ=</HashCode>
+      <FileName>Entidades\Cliente.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Cuota" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ClubDeportivo.Cuota">
+    <Position X="5.75" Y="2.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAIEAAAACAAAAAAAAAAAQA=</HashCode>
+      <FileName>Entidades\Cuota.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClubDeportivo.NoSocio">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Entidades\NoSocio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClubDeportivo.Socio">
+    <Position X="3.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAIAAAA=</HashCode>
+      <FileName>Entidades\Socio.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClubDeportivo.Datos.Clientes">
+    <Position X="11.5" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Data\Clientes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClubDeportivo.Datos.NoSocios">
+    <Position X="8.75" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Data\NoSocios.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClubDeportivo.Datos.Socios">
+    <Position X="8.75" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>Data\Socios.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ClubDeportivo.Datos.Usuarios">
+    <Position X="11.25" Y="0.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Usuarios.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

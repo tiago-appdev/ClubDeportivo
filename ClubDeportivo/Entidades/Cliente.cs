@@ -1,48 +1,33 @@
-
-using System;
-
 namespace ClubDeportivo
 {
-    public class Cliente
+    public abstract class Cliente
     {
         // Variables para datos personales
-        public string Nombre { get; set; }
+        public int ClienteId { get; set; }
         public string Apellido { get; set; }
         public string Direccion { get; set; }
+        public string Nombre { get; set; }
         public string Telefono { get; set; }
+        public string Tipo { get; set; }
         public bool Activo { get; set; }
+        public Cuota? Cuota { get; set; }
 
-        public string TipoCliente { get; set; }
 
-        // Constructor para crear un nuevo cliente
-        public Cliente(string nombre, string apellido, string direccion, string telefono, string tipoCliente)
+        protected Cliente(string nombre, string apellido, string direccion, string telefono, string tipo)
         {
             Nombre = nombre;
             Apellido = apellido;
             Direccion = direccion;
             Telefono = telefono;
+            Tipo = tipo;
             Activo = false; // Por defecto, el cliente se crea inactivo
-            TipoCliente = tipoCliente;
         }
 
-        // Método para dar de baja al cliente
-        public void DarDeBaja()
+        public virtual int? RegistrarCliente(Cliente cliente)
         {
-            if (Activo)
-            {
-                Activo = false;
-                Console.WriteLine("El cliente ha sido dado de baja.");
-            }
-            else
-            {
-                Console.WriteLine("El cliente ya está dado de baja.");
-            }
+            return null;
         }
 
-        public void RegistrarCliente()
-        {
-            Console.WriteLine("");
-        }
 
     }
 }

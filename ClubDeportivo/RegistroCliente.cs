@@ -1,19 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using ClubDeportivo.Datos;
-
-namespace ClubDeportivo
+﻿namespace ClubDeportivo
 {
-    public partial class frmRegistro : Form
+    public partial class FrmRegistro : Form
     {
-        public frmRegistro()
+        public FrmRegistro()
         {
             InitializeComponent();
         }
@@ -29,32 +18,35 @@ namespace ClubDeportivo
             }
             else
             {
-                int? id;
-                string Nombre = txtNombre.Text;
-                string Apellido = txtApellido.Text;
-                string Telefono = txtNumero.Text;
-                string Direccion = txtDireccion.Text;
-                string TipoCliente = cmbTipo.Text;
-                E_Cliente cliente = new(Nombre, Apellido, Direccion, Telefono, TipoCliente);
-                // instanciamos para usar el metodo dentro de clientelantes
-                Clientes clientes = new();
-                id = clientes.RegistrarCliente(cliente);
+                string nombre = txtNombre.Text;
+                string apellido = txtApellido.Text;
+                string telefono = txtNumero.Text;
+                string direccion = txtDireccion.Text;
+                string tipoCliente = cmbTipo.Text;
 
-                if (id != null)
+                Cliente cliente;
+
+                // El cobro es distinto dependiendo del tipo de socio
+                if (tipoCliente == "Socio") {
+                    cliente = new Socio(nombre, apellido, direccion, telefono, new Cuota(500.00), 0);
+                } else {
+                    cliente = new NoSocio(nombre, apellido, direccion, telefono, new Cuota(250.00), 0);
+                } 
+
+                try
                 {
-                    if (id == 0)
-                    {
-                        MessageBox.Show("CLIENTE YA EXISTE", "AVISO DEL SISTEMA",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Se almaceno con exito con el codigo Nro " + id, "AVISO DEL SISTEMA",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Question);
-                    }
+                    int? id = cliente.RegistrarCliente(cliente);
+                    MessageBox.Show("Se almaceno con exito con el codigo Nro" + id, "AVISO",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Question);
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "AVISO",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }
+
             }
         }
 
@@ -72,8 +64,8 @@ namespace ClubDeportivo
         {
             frmMenu menuPrincipal = new() //Instanciamos el menu principal para mostrarlo.
             {
-                rol = frmInicio.rol,
-                usuario = frmInicio.usuario
+                rol = FrmInicio.Rol,
+                usuario = FrmInicio.Usuario
             };
             menuPrincipal.Show(); //Se muestra el menu principal
             this.Hide(); // se oculta el formulario del login

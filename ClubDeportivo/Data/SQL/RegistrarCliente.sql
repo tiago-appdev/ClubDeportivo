@@ -1,10 +1,13 @@
-USE ClubDeportivo;
+USE ClubDeportivo_tastewhose;
+
+DROP PROCEDURE IF EXISTS RegistrarCliente;
 
 DELIMITER / CREATE PROCEDURE RegistrarCliente(
     IN Nom VARCHAR(255),
     IN Ape VARCHAR(255),
     IN Tel VARCHAR(15),
     IN Dir VARCHAR(255),
+    IN Mon DECIMAL(10, 2),
     IN Tip ENUM('Socio', 'No Socio'),
     OUT id INT
 ) BEGIN DECLARE existe INT DEFAULT 0;
@@ -18,15 +21,12 @@ WHERE
     AND Apellido = Ape
     AND Direccion = Dir;
 
+SET
+    id = 0;
+
 IF existe = 0 THEN
 INSERT INTO
-    Clientes (
-        Apellido,
-        Direccion,
-        Nombre,
-        Telefono,
-        Tipo_cliente
-    )
+    Clientes (Apellido, Direccion, Nombre, Telefono, Tipo)
 VALUES
     (Ape, Dir, Nom, Tel, Tip);
 
@@ -37,7 +37,7 @@ IF Tip = 'Socio' THEN
 INSERT INTO
     Cuotas (FechaDeVencimiento, Monto, Pagada)
 VALUES
-    (DATE_ADD(CURDATE(), INTERVAL 1 MONTH), 500, 0);
+    (DATE_ADD(CURDATE(), INTERVAL 1 MONTH), Mon, 0);
 
 INSERT INTO
     Socios (Cliente_id, Cuota_id)
@@ -48,17 +48,14 @@ ELSE
 INSERT INTO
     Cuotas (FechaDeVencimiento, Monto, Pagada)
 VALUES
-    (DATE_ADD(CURDATE(), INTERVAL 1 DAY), 500, 0);
+    (DATE_ADD(CURDATE(), INTERVAL 1 DAY), Mon, 0);
+
 INSERT INTO
     NoSocios (Cliente_id, Cuota_id)
 VALUES
     (id, LAST_INSERT_ID());
 
 END IF;
-
-ELSE
-SET
-    id = 0;
 
 END IF;
 

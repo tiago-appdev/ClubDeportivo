@@ -1,64 +1,35 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ClubDeportivo.Datos;
 
 namespace ClubDeportivo
 {
     internal class Socio : Cliente
     {
-        public Cuota Cuota { get; set; }
         public int NumeroDeSocio { get; set; }
 
 
         public Socio(string nombre, string apellido, string direccion, string telefono, Cuota cuota, int numeroDeSocio)
-              : base(nombre, apellido, direccion, telefono, tipoCliente: "Socio")
+              : base(nombre, apellido, direccion, telefono, tipo: "Socio")
         {
             this.Cuota = cuota;
             this.NumeroDeSocio = numeroDeSocio;
         }
 
-        public void PagarCuotaMensual()
+        // Si bien es igual al metodo de NoSocio, en el futuro pueden variar
+        public override int? RegistrarCliente(Cliente cliente)
         {
-            Console.WriteLine($"El socio {Nombre} {Apellido} ha pagado la cuota mensual de ${Cuota}");
-        }
-
-        public void PuedeRealizarActividades()
-        {
-            DateTime fechaActual = DateTime.Now;
-            Activo = Cuota.FechaDeVencimiento < fechaActual && Cuota.Pagada;
-        }
-
-        public void RegistrarCliente(E_Socio socio)
-        {
-
             try
             {
-                if (socio.Activo)
-                {
-                    throw new System.Exception("El socio ya se encuentra registrado");
-                }
-                Cuota.PagarEfectivo();
-                // Cobrar la actividad preferida al registrar al cliente
-                Activo = true;
-                Console.WriteLine($"El socio {Nombre} {Apellido} fue registrado");
+                Clientes clientesDb = new();
+                int? id = clientesDb.RegistrarCliente(cliente);
+                if (id == 0) throw new Exception("No se pudo registrar el cliente");
+                bool? pagada = clientesDb.PagarCuota(cliente);
+                if (pagada != true) throw new Exception("No se pudo pagar la cuota");
+                return id;
             }
-            catch (System.Exception)
+            catch (Exception e)
             {
-                throw;
+                throw new Exception(e.Message);
             }
-        }
-
-        public void EntregarCarnet()
-        {
-            Console.WriteLine("El carnet ha sido entregado");
-        }
-
-
-        public static void ListarSociosConVencimiento()
-        {
-            Console.WriteLine("Lista de socios con vencimiento al dia de hoy");
         }
 
 
