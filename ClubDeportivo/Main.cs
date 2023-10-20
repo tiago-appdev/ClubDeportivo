@@ -4,11 +4,11 @@
     {
 
         [STAThread]
-        static void Main()
+        private static void Main()
         {
 
             ApplicationConfiguration.Initialize();
-            Application.Run(new frmInicio());
+            Application.Run(new FrmInicio());
         }
     }
 }

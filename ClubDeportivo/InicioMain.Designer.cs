@@ -1,6 +1,6 @@
 ﻿namespace ClubDeportivo
 {
-    partial class frmInicio
+    partial class FrmInicio
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInicio));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInicio));
             pictureInicio = new PictureBox();
             lblInicio = new Label();
             txtUsuario = new TextBox();
@@ -103,7 +103,7 @@
             Controls.Add(lblInicio);
             Controls.Add(pictureInicio);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "frmInicio";
+            Name = "FrmInicio";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CLUB DEPORTIVO";
             ((System.ComponentModel.ISupportInitialize)pictureInicio).EndInit();

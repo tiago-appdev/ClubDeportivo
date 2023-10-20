@@ -1,19 +1,12 @@
 ﻿using MySql.Data.MySqlClient;
-using MySqlX.XDevAPI;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ClubDeportivo.Datos
 {
     internal class Usuarios
     {
-        public DataTable Log_Usu(string L_Usu, string P_Usu)
+        public DataTable Log_Usu(string lUsu, string pUsu)
         {
-            MySqlDataReader resultado; // variable de tipo datareader
             DataTable tabla = new();
             MySqlConnection sqlCon = new();
             try
@@ -28,13 +21,13 @@ namespace ClubDeportivo.Datos
                 };
 
                 // definimos los parametros que tiene el procedure
-                comando.Parameters.Add("Usu", MySqlDbType.VarChar).Value = L_Usu;
+                comando.Parameters.Add("Usu", MySqlDbType.VarChar).Value = lUsu;
 
-                comando.Parameters.Add("Pass", MySqlDbType.VarChar).Value = P_Usu;
+                comando.Parameters.Add("Pass", MySqlDbType.VarChar).Value = pUsu;
 
                 // abrimos la conexion
                 sqlCon.Open();
-                resultado = comando.ExecuteReader(); // almacenamos el resultado en la variable
+                MySqlDataReader? resultado = comando.ExecuteReader(); // variable de tipo datareader
 
                 tabla.Load(resultado); // cargamos la tabla con el resultado.
 
@@ -49,7 +42,7 @@ namespace ClubDeportivo.Datos
             finally
             {
                 if (sqlCon.State == ConnectionState.Open)
-                { sqlCon.Close(); };
+                { sqlCon.Close(); }
             }
         }
     }

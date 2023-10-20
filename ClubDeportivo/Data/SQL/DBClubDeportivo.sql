@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS ClubDeportivo;
+DROP DATABASE IF EXISTS ClubDeportivo_tastewhose;
 
-CREATE DATABASE ClubDeportivo;
+CREATE DATABASE ClubDeportivo_tastewhose;
 
-USE ClubDeportivo;
+USE ClubDeportivo_tastewhose;
 
 CREATE TABLE Usuarios (
     Usuario_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -21,11 +21,11 @@ CREATE TABLE Cuotas (
 CREATE TABLE Clientes (
     Cliente_id INT PRIMARY KEY AUTO_INCREMENT,
     Apellido VARCHAR(255) NOT NULL,
-    Direccion VARCHAR(255),
     Nombre VARCHAR(255) NOT NULL,
+    Direccion VARCHAR(255),
     Telefono VARCHAR(15) NOT NULL,
     Activo BOOLEAN DEFAULT 0 NOT NULL,
-    Tipo_cliente ENUM('Socio', 'No Socio') NOT NULL
+    Tipo ENUM('Socio', 'No Socio') NOT NULL
 );
 
 CREATE TABLE Socios (
@@ -55,7 +55,6 @@ INSERT INTO
     Actividades (Nombre, Descripcion, precio)
 VALUES
     ('Activity 1', 'Description for Activity 1', 500),
-    -- Assign cuota_id of the corresponding cuota
     ('Activity 2', 'Description for Activity 2', 200);
 
 INSERT INTO

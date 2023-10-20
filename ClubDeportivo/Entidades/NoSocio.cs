@@ -1,38 +1,37 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ClubDeportivo.Datos;
 
 namespace ClubDeportivo
 {
     internal class NoSocio : Cliente
-
     {
         public int NumeroDeNoSocio { get; set; }
-        public NoSocio(string nombre, string apellido, string direccion, string telefono, int numeroDeNoSocio) : base(nombre, apellido, direccion, telefono, tipoCliente: "NoSocio")
+
+
+        public NoSocio(string nombre, string apellido, string direccion, string telefono, Cuota cuota, int numeroDeNoSocio)
+              : base(nombre, apellido, direccion, telefono, tipo: "No Socio")
         {
+            this.Cuota = cuota;
             this.NumeroDeNoSocio = numeroDeNoSocio;
         }
 
-        public void PagarActividad(double costoActividad)
+        // Si bien es igual al metodo de Socio, en el futuro pueden variar
+        public override int? RegistrarCliente(Cliente cliente)
         {
-            Console.WriteLine($"El no socio {Nombre} {Apellido} ha pagado ${costoActividad} por la actividad.");
+            try
+            {
+                Clientes clientesDb = new();
+                int? id = clientesDb.RegistrarCliente(cliente);
+                if (id == 0) throw new Exception("No se pudo registrar el cliente");
+                bool? pagada = clientesDb.PagarCuota(cliente);
+                if (pagada != true) throw new Exception("No se pudo pagar la cuota");
+                return id;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
         }
 
-        //public void RegistrarCliente(double costoActividad)
-        //{
-        //    if (!Activo)
-        //    {
-        //        PagarActividad(costoActividad);
-        //        // Cobrar la actividad preferida al registrar al cliente
-        //        Activo = true;
-        //        Console.WriteLine($"El no socio {Nombre} {Apellido} fue registrado");
-        //    }
-        //    else
-        //    {
-        //        Console.WriteLine("El no socio ya está registrado.");
-        //    }
-        //}
+
     }
 }

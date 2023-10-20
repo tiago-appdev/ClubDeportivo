@@ -32,7 +32,7 @@ namespace ClubDeportivo
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            frmRegistro registro = new frmRegistro();
+            FrmRegistro registro = new FrmRegistro();
             registro.Show();
             this.Hide();
         }

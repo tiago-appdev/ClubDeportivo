@@ -1,6 +1,6 @@
 ﻿namespace ClubDeportivo
 {
-    partial class frmRegistro
+    partial class FrmRegistro
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRegistro));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRegistro));
             pictureRegistro = new PictureBox();
             txtNombre = new TextBox();
             txtApellido = new TextBox();
@@ -206,7 +206,7 @@
             Controls.Add(txtNombre);
             Controls.Add(pictureRegistro);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "frmRegistro";
+            Name = "FrmRegistro";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "REGISTRO DE CLIENTE (SOCIO / NO SOCIO)";
             ((System.ComponentModel.ISupportInitialize)pictureRegistro).EndInit();
