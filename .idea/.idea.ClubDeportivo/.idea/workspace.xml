@@ -7,70 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd9d16f8-45db-4d14-aaf2-e64398cc08d6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.ClubDeportivo/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.ClubDeportivo/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.ClubDeportivo/.idea/dataSources/bc1e8a63-ed76-4585-8454-aa1fda74de50.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.ClubDeportivo/.idea/dataSources/bc1e8a63-ed76-4585-8454-aa1fda74de50/storage_v2/_src_/schema/ClubDeportivo_tastewhose.zl4avg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.ClubDeportivo/.idea/dataSources/bc1e8a63-ed76-4585-8454-aa1fda74de50/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.ClubDeportivo/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.ClubDeportivo/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.ClubDeportivo/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.ClubDeportivo/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/ClubDeportivo/FileContentIndex/275281c5-5b53-458c-80f8-5bb02e48a878.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/ClubDeportivo/FileContentIndex/7fa473f8-4b71-4860-9572-f3139711a144.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/ClubDeportivo/FileContentIndex/b7783eba-937f-477e-aeae-3b565a8aec19.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vs/ClubDeportivo/FileContentIndex/c999d15a-ac57-4a73-b923-b91fd62f1a3e.vsidx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ClubDeportivo/ClassDiagram1.cd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ClubDeportivo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ClubDeportivo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ClubDeportivo/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ClubDeportivo/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ClubDeportivo/FileContentIndex/3da4d632-9c13-498e-821d-f595bc5a5ce5.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ClubDeportivo/FileContentIndex/48dbff48-1f0a-4f89-83fd-2e311cc7e620.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ClubDeportivo/FileContentIndex/4f310eb3-1f64-4d9a-8372-1fa8d29b398e.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ClubDeportivo/FileContentIndex/729a3b85-c54f-4619-8c63-c97d19af33ef.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ClubDeportivo/FileContentIndex/82a37e1e-f760-44cc-b2e5-09c04f6c91da.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ClubDeportivo/FileContentIndex/88fdc172-a780-4fc4-862e-55b0c32e24a3.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ClubDeportivo/FileContentIndex/ac00df4d-7e8f-46c8-a88c-569e0d48eb93.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ClubDeportivo/FileContentIndex/b35a9041-22af-44de-8f08-8c6d63f94925.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ClubDeportivo/FileContentIndex/bcd8368b-b578-4f2f-b242-2212915e46aa.vsidx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ClubDeportivo/v17/.futdcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ClubDeportivo/v17/.futdcache.v2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ClubDeportivo/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ClubDeportivo/v17/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/clubdeportivo.metadata.v7.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/clubdeportivo.metadata.v7.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vs/ProjectEvaluation/clubdeportivo.projects.v7.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectEvaluation/clubdeportivo.projects.v7.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/.env" beforeDir="false" afterPath="$PROJECT_DIR$/ClubDeportivo/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/Data/Clientes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubDeportivo/Data/Clientes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/Data/Conexion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubDeportivo/Data/Conexion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/Data/DBClubDeportivo.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/Data/Login.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/Data/RegistrarCliente.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/Data/Usuarios.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubDeportivo/Data/Usuarios.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/Entidades/Actividad.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/Entidades/Cliente.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubDeportivo/Entidades/Cliente.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/Entidades/Cuota.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubDeportivo/Entidades/Cuota.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/Entidades/E_Cliente.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/Entidades/E_NoSocio.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/Entidades/E_Socio.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/Entidades/NoSocio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubDeportivo/Entidades/NoSocio.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/Entidades/Socio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubDeportivo/Entidades/Socio.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/InicioMain.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubDeportivo/InicioMain.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/InicioMain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubDeportivo/InicioMain.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/Main.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubDeportivo/Main.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/Menu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubDeportivo/Menu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/RegistroCliente.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubDeportivo/RegistroCliente.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/RegistroCliente.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ClubDeportivo/RegistroCliente.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/bin/Debug/net6.0-windows/ClubDeportivo.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ClubDeportivo/bin/Debug/net6.0-windows/ClubDeportivo.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/bin/Debug/net6.0-windows/ClubDeportivo.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ClubDeportivo/bin/Debug/net6.0-windows/ClubDeportivo.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/obj/ClubDeportivo.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/ClubDeportivo/obj/ClubDeportivo.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/obj/Debug/net6.0-windows/ClubDeportivo.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ClubDeportivo/obj/Debug/net6.0-windows/ClubDeportivo.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/obj/Debug/net6.0-windows/ClubDeportivo.designer.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/ClubDeportivo/obj/Debug/net6.0-windows/ClubDeportivo.designer.deps.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/obj/Debug/net6.0-windows/ClubDeportivo.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ClubDeportivo/obj/Debug/net6.0-windows/ClubDeportivo.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/obj/Debug/net6.0-windows/ClubDeportivo.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ClubDeportivo/obj/Debug/net6.0-windows/ClubDeportivo.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/obj/Debug/net6.0-windows/ref/ClubDeportivo.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ClubDeportivo/obj/Debug/net6.0-windows/ref/ClubDeportivo.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/obj/Debug/net6.0-windows/refint/ClubDeportivo.dll" beforeDir="false" afterPath="$PROJECT_DIR$/ClubDeportivo/obj/Debug/net6.0-windows/refint/ClubDeportivo.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ClubDeportivo/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/ClubDeportivo/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClubDeportivo/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/ClubDeportivo/obj/rider.project.restore.info" afterDir="false" />
-    </list>
+    <list default="true" id="fd9d16f8-45db-4d14-aaf2-e64398cc08d6" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -153,7 +90,7 @@
       <workItem from="1697748803535" duration="2208000" />
       <workItem from="1697834622345" duration="73000" />
       <workItem from="1697843444753" duration="5000" />
-      <workItem from="1697843960482" duration="745000" />
+      <workItem from="1697843960482" duration="1262000" />
     </task>
     <servers />
   </component>

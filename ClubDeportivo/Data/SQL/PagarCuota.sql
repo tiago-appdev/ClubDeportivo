@@ -4,10 +4,7 @@ DROP PROCEDURE IF EXISTS PagarCuota;
 
 DELIMITER /
 CREATE PROCEDURE PagarCuota(
-    IN Nom VARCHAR(255),
-    IN Ape VARCHAR(255),
-    IN Tel VARCHAR(15),
-    IN Dir VARCHAR(255),
+    IN Dni VARCHAR(15),
     IN Tip ENUM('Socio', 'No Socio'),
     OUT paid BOOLEAN
 )
@@ -22,7 +19,7 @@ BEGIN
             WHERE Cliente_id IN (
                 SELECT Cliente_id
                 FROM Clientes
-                WHERE Nombre = Nom AND Apellido = Ape AND Telefono = Tel AND Direccion = Dir
+                WHERE DNI = dni
             )
         );
     ELSE
@@ -34,13 +31,13 @@ BEGIN
             WHERE Cliente_id IN (
                 SELECT Cliente_id
                 FROM Clientes
-                WHERE Nombre = Nom AND Apellido = Ape AND Telefono = Tel AND Direccion = Dir
+                WHERE DNI = dni
             )
         );
     END IF;
     UPDATE Clientes
     SET Activo = 1
-    WHERE Nombre = Nom AND Apellido = Ape AND Telefono = Tel AND Direccion = Dir;
+    WHERE DNI = dni;
 
     IF ROW_COUNT() > 0 THEN
         SET paid = TRUE;

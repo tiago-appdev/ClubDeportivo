@@ -10,7 +10,7 @@
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             if (txtNombre.Text == "" || txtApellido.Text == "" ||
-            txtDireccion.Text == "" || cmbTipo.Text == "" || txtNumero.Text == "")
+            txtDireccion.Text == "" || cmbTipo.Text == "" || txtNumero.Text == "" || txtDni.Text == "")
             {
                 MessageBox.Show("Debe completar datos requeridos (*) ",
                 "AVISO DEL SISTEMA", MessageBoxButtons.OK,
@@ -23,15 +23,19 @@
                 string telefono = txtNumero.Text;
                 string direccion = txtDireccion.Text;
                 string tipoCliente = cmbTipo.Text;
+                string dni = txtDni.Text;
 
                 Cliente cliente;
 
                 // El cobro es distinto dependiendo del tipo de socio
-                if (tipoCliente == "Socio") {
-                    cliente = new Socio(nombre, apellido, direccion, telefono, new Cuota(500.00), 0);
-                } else {
-                    cliente = new NoSocio(nombre, apellido, direccion, telefono, new Cuota(250.00), 0);
-                } 
+                if (tipoCliente == "Socio")
+                {
+                    cliente = new Socio(nombre, apellido, direccion, telefono, new Cuota((decimal)500.00), 0, dni);
+                }
+                else
+                {
+                    cliente = new NoSocio(nombre, apellido, direccion, telefono, new Cuota((decimal)250.00), 0, dni);
+                }
 
                 try
                 {
@@ -57,6 +61,7 @@
             txtDireccion.Text = "";
             txtNumero.Text = "";
             cmbTipo.Text = "";
+            txtDni.Text = "";
             txtNombre.Focus();
         }
 
@@ -69,6 +74,16 @@
             };
             menuPrincipal.Show(); //Se muestra el menu principal
             this.Hide(); // se oculta el formulario del login
+        }
+
+        private void txtNumero_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

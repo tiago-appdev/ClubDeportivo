@@ -35,11 +35,13 @@
             txtDireccion = new TextBox();
             cmbTipo = new ComboBox();
             txtNumero = new TextBox();
+            txtDni = new TextBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
+            label6 = new Label();
             lblTitle = new Label();
             btnIngresar = new Button();
             btnLimpiar = new Button();
@@ -59,21 +61,21 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(440, 103);
+            txtNombre.Location = new Point(440, 81);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(259, 23);
             txtNombre.TabIndex = 1;
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(440, 165);
+            txtApellido.Location = new Point(440, 143);
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(259, 23);
             txtApellido.TabIndex = 2;
             // 
             // txtDireccion
             // 
-            txtDireccion.Location = new Point(440, 220);
+            txtDireccion.Location = new Point(440, 198);
             txtDireccion.Name = "txtDireccion";
             txtDireccion.Size = new Size(259, 23);
             txtDireccion.TabIndex = 3;
@@ -82,23 +84,31 @@
             // 
             cmbTipo.FormattingEnabled = true;
             cmbTipo.Items.AddRange(new object[] { "Socio", "No Socio" });
-            cmbTipo.Location = new Point(334, 286);
+            cmbTipo.Location = new Point(440, 343);
             cmbTipo.Name = "cmbTipo";
             cmbTipo.Size = new Size(97, 23);
             cmbTipo.TabIndex = 4;
             // 
             // txtNumero
             // 
-            txtNumero.Location = new Point(582, 286);
+            txtNumero.Location = new Point(440, 301);
             txtNumero.Name = "txtNumero";
-            txtNumero.Size = new Size(160, 23);
+            txtNumero.Size = new Size(259, 23);
             txtNumero.TabIndex = 5;
+            txtNumero.TextChanged += txtNumero_TextChanged;
+            // 
+            // txtDni
+            // 
+            txtDni.Location = new Point(440, 254);
+            txtDni.Name = "txtDni";
+            txtDni.Size = new Size(259, 23);
+            txtDni.TabIndex = 5;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(334, 104);
+            label1.Location = new Point(334, 82);
             label1.Name = "label1";
             label1.Size = new Size(63, 17);
             label1.TabIndex = 6;
@@ -108,7 +118,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(334, 166);
+            label2.Location = new Point(334, 144);
             label2.Name = "label2";
             label2.Size = new Size(70, 17);
             label2.TabIndex = 7;
@@ -118,7 +128,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(334, 221);
+            label3.Location = new Point(334, 199);
             label3.Name = "label3";
             label3.Size = new Size(77, 17);
             label3.TabIndex = 8;
@@ -128,21 +138,32 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(272, 289);
+            label4.Location = new Point(334, 344);
             label4.Name = "label4";
             label4.Size = new Size(38, 17);
             label4.TabIndex = 9;
             label4.Text = "TIPO";
+            label4.Click += label4_Click;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(512, 287);
+            label5.Location = new Point(334, 302);
             label5.Name = "label5";
-            label5.Size = new Size(64, 17);
+            label5.Size = new Size(74, 17);
             label5.TabIndex = 10;
-            label5.Text = "NÚMERO";
+            label5.Text = "TELÉFONO";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(334, 255);
+            label6.Name = "label6";
+            label6.Size = new Size(32, 17);
+            label6.TabIndex = 10;
+            label6.Text = "DNI";
             // 
             // lblTitle
             // 
@@ -184,7 +205,7 @@
             btnVolver.UseVisualStyleBackColor = true;
             btnVolver.Click += btnVolver_Click;
             // 
-            // frmRegistro
+            // FrmRegistro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -194,12 +215,14 @@
             Controls.Add(btnLimpiar);
             Controls.Add(btnIngresar);
             Controls.Add(lblTitle);
+            Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(txtNumero);
+            Controls.Add(txtDni);
             Controls.Add(cmbTipo);
             Controls.Add(txtDireccion);
             Controls.Add(txtApellido);
@@ -222,11 +245,13 @@
         private TextBox txtDireccion;
         private ComboBox cmbTipo;
         private TextBox txtNumero;
+        private TextBox txtDni;
         private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;
         private Label label5;
+        private Label label6;
         private Label lblTitle;
         private Button btnIngresar;
         private Button btnLimpiar;

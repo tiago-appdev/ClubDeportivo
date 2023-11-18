@@ -19,9 +19,10 @@ namespace ClubDeportivo.Datos
                 comando.Parameters.Add("Nom", MySqlDbType.VarChar).Value = cliente.Nombre;
                 comando.Parameters.Add("Ape", MySqlDbType.VarChar).Value = cliente.Apellido;
                 comando.Parameters.Add("Tel", MySqlDbType.VarChar).Value = cliente.Telefono;
+                comando.Parameters.Add("Dni", MySqlDbType.VarChar).Value = cliente.Dni;
                 comando.Parameters.Add("Dir", MySqlDbType.VarChar).Value = cliente.Direccion;
-                comando.Parameters.Add("Mon", MySqlDbType.VarChar).Value = cliente.Cuota?.Monto;
-                comando.Parameters.Add("Tip", MySqlDbType.VarChar).Value = cliente.Tipo;
+                comando.Parameters.Add("Mon", MySqlDbType.Decimal).Value = cliente.Cuota?.Monto;
+                comando.Parameters.Add("Tip", MySqlDbType.Enum).Value = cliente.Tipo;
                 MySqlParameter parCodigo = new()
                 {
                     ParameterName = "id",
@@ -56,10 +57,7 @@ namespace ClubDeportivo.Datos
                 {
                     CommandType = CommandType.StoredProcedure
                 };
-                comando.Parameters.Add("Nom", MySqlDbType.VarChar).Value = cliente.Nombre;
-                comando.Parameters.Add("Ape", MySqlDbType.VarChar).Value = cliente.Apellido;
-                comando.Parameters.Add("Tel", MySqlDbType.VarChar).Value = cliente.Telefono;
-                comando.Parameters.Add("Dir", MySqlDbType.VarChar).Value = cliente.Direccion;
+                comando.Parameters.Add("Dni", MySqlDbType.VarChar).Value = cliente.Dni;
                 comando.Parameters.Add("Tip", MySqlDbType.VarChar).Value = cliente.Tipo;
                 MySqlParameter parCodigo = new()
                 {

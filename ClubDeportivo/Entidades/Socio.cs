@@ -7,8 +7,8 @@ namespace ClubDeportivo
         public int NumeroDeSocio { get; set; }
 
 
-        public Socio(string nombre, string apellido, string direccion, string telefono, Cuota cuota, int numeroDeSocio)
-              : base(nombre, apellido, direccion, telefono, tipo: "Socio")
+        public Socio(string nombre, string apellido, string direccion, string telefono, Cuota cuota, int numeroDeSocio, string dni)
+              : base(nombre, apellido, direccion, telefono, tipo: "Socio", dni)
         {
             this.Cuota = cuota;
             this.NumeroDeSocio = numeroDeSocio;
@@ -22,8 +22,6 @@ namespace ClubDeportivo
                 Clientes clientesDb = new();
                 int? id = clientesDb.RegistrarCliente(cliente);
                 if (id == 0) throw new Exception("No se pudo registrar el cliente");
-                bool? pagada = clientesDb.PagarCuota(cliente);
-                if (pagada != true) throw new Exception("No se pudo pagar la cuota");
                 return id;
             }
             catch (Exception e)

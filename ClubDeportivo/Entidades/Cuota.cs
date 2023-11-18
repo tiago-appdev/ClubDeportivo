@@ -2,11 +2,11 @@ namespace ClubDeportivo
 {
     public class Cuota
     {
-        public double Monto { get; set; }
+        public decimal Monto { get; set; }
         public bool Pagada { get; set; }
         public DateTime FechaDeVencimiento { get; set; }
 
-        public Cuota(double monto)
+        public Cuota(decimal monto)
         {
             Monto = monto;
             Pagada = false;
@@ -29,15 +29,10 @@ namespace ClubDeportivo
         {
             if (!Pagada)
             {
-                double montoTotal = Monto;
-
-                if (cuotas == 3)
+                decimal montoTotal = Monto;
+                if (cuotas > 1)
                 {
-                    montoTotal *= 1.05; // 5% de recargo para 3 cuotas
-                }
-                else if (cuotas == 6)
-                {
-                    montoTotal *= 1.1; // 10% de recargo para 6 cuotas
+                    montoTotal = Monto * (decimal)1.1;
                 }
 
                 Console.WriteLine($"La cuota de ${Monto} se ha pagado en {cuotas} cuotas de ${montoTotal / cuotas} cada una.");

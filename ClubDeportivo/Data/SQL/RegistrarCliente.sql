@@ -6,6 +6,7 @@ DELIMITER / CREATE PROCEDURE RegistrarCliente(
     IN Nom VARCHAR(255),
     IN Ape VARCHAR(255),
     IN Tel VARCHAR(15),
+    IN Dni VARCHAR(15),
     IN Dir VARCHAR(255),
     IN Mon DECIMAL(10, 2),
     IN Tip ENUM('Socio', 'No Socio'),
@@ -15,20 +16,20 @@ DELIMITER / CREATE PROCEDURE RegistrarCliente(
 SELECT
     COUNT(*) INTO existe
 FROM
-    Clientes
+    Clientes c
 WHERE
-    Nombre = Nom
-    AND Apellido = Ape
-    AND Direccion = Dir;
+    c.DNI = Dni;
+
+SELECT existe; 
 
 SET
     id = 0;
 
 IF existe = 0 THEN
 INSERT INTO
-    Clientes (Apellido, Direccion, Nombre, Telefono, Tipo)
+    Clientes (Apellido, Direccion, Nombre, Telefono, Tipo, DNI)
 VALUES
-    (Ape, Dir, Nom, Tel, Tip);
+    (Ape, Dir, Nom, Tel, Tip, Dni);
 
 SET
     id = LAST_INSERT_ID();
@@ -43,6 +44,7 @@ INSERT INTO
     Socios (Cliente_id, Cuota_id)
 VALUES
     (id, LAST_INSERT_ID());
+
 
 ELSE
 INSERT INTO

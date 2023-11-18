@@ -75,3 +75,6 @@ C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0-windows
 C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0-windows\ClubDeportivo.genruntimeconfig.cache
 C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0-windows\ref\ClubDeportivo.dll
 C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\bin\Debug\net6.0-windows\DotEnv.Core.dll
+C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0-windows\ClubDeportivo.sourcelink.json
+C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0-windows\ClubDeportivo.FrmPago.resources
+C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0-windows\ClubDeportivo.FrmComprobante.resources
