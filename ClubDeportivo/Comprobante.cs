@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Printing;
 
 namespace ClubDeportivo
 {
@@ -19,12 +20,21 @@ namespace ClubDeportivo
 
         private void ComprobanteForm_Load(object sender, EventArgs e)
         {
-            // Set the text properties of controls based on the variables
-            socioLabel.Text = $"Socio: {socio}";
-            typeLabel.Text = $"Tipo: {tipo}";
-            formaPagoLabel.Text = $"Forma de Pago: {formaDePago}";
-            montoLabel.Text = $"Monto: {monto:C}";
-            dateLabel.Text = $"Fecha: {fecha_f.ToShortDateString()}";
+
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            //btnImprimir.Visible = false;
+
+            PrintDocument pd = new PrintDocument();
+            //pd.PrintPage += new PrintPageEventHandler();
+            pd.Print();
+
+            MessageBox.Show("Operaación existosa", "AVISO DEL SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            frmMenu menuPrincipal = new frmMenu();
+            menuPrincipal.Show();
+            this.Close();
         }
     }
 }

@@ -45,11 +45,9 @@ namespace ClubDeportivo
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        // Other methods...
 
         #region Windows Form Designer generated code
 
-        // Existing code...
 
         #endregion
 
@@ -185,7 +183,6 @@ namespace ClubDeportivo
             socioNumberTextBox.Name = "socioNumberTextBox";
             socioNumberTextBox.Size = new Size(116, 23);
             socioNumberTextBox.TabIndex = 4;
-            socioNumberTextBox.TextChanged += socioNumberTextBox_TextChanged;
             // 
             // label2
             // 
@@ -209,7 +206,6 @@ namespace ClubDeportivo
             activityComboBox.Name = "activityComboBox";
             activityComboBox.Size = new Size(140, 23);
             activityComboBox.TabIndex = 5;
-            activityComboBox.SelectedIndexChanged += activityComboBox_SelectedIndexChanged;
             // 
             // label3
             // 
@@ -319,24 +315,13 @@ namespace ClubDeportivo
 
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
-            // Check conditions to enable/disable the "Pagar" button
+            // Chequear condiciones para habilitar o deshabilitar el boton de pago
             bool isCuotaAmountValid = !string.IsNullOrEmpty(cuotaAmountTextBox.Text);
             bool isFormaDePagoSelected = radioButton1.Checked || ((radioButton2.Checked && !string.IsNullOrEmpty(cardNumberTextBox.Text) && !string.IsNullOrEmpty(cardExpirationTextBox.Text) && !string.IsNullOrEmpty(cardCvvTextBox.Text)));
 
-            // Enable the "Pagar" button only when conditions are met
             pagarButton.Enabled = isCuotaAmountValid && isFormaDePagoSelected;
         }
-        private void socioNumberTextBox_TextChanged(object sender, EventArgs e)
-        {
-            // Logic to fetch and display information based on whether the entered number corresponds to a socio or no socio.
-            // Update cuotaAmountTextBox based on the fetched information.
-            // Enable/disable pagarButton accordingly.
-        }
 
-        private void activityComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Logic to update cuotaAmountTextBox based on the selected activity.
-        }
 
         private void pagarButton_Click(object sender, EventArgs e)
         {
@@ -367,19 +352,8 @@ namespace ClubDeportivo
             menuPrincipal.Show(); //Se muestra el menu principal
             this.Hide(); // se oculta el formulario del login
         }
-
-        // private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        // {
-        //     // Check conditions to enable/disable the "Pagar" button
-        //     bool isCuotaAmountValid = !string.IsNullOrEmpty(cuotaAmountTextBox.Text);
-        //     bool isFormaDePagoSelected = radioButton1.Checked || ((radioButton2.Checked && !string.IsNullOrEmpty(cardNumberTextBox.Text) && !string.IsNullOrEmpty(cardExpirationTextBox.Text) && !string.IsNullOrEmpty(cardCvvTextBox.Text)));
-
-        //     // Enable the "Pagar" button only when conditions are met
-        //     pagarButton.Enabled = isCuotaAmountValid && isFormaDePagoSelected;
-        // }
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            // Toggle the visibility of card-related inputs and Cuotas based on the selected Forma de Pago.
             bool isTarjetaSelected = radioButton2.Checked;
             label4.Visible = isTarjetaSelected;
             cardNumberTextBox.Visible = isTarjetaSelected;
@@ -394,7 +368,6 @@ namespace ClubDeportivo
 
         private void verificarSocioButton_Click(object sender, EventArgs e)
         {
-            // Logic to process the payment, update the database, and show the comprobante form.
             MySqlConnection sqlCon = new MySqlConnection();
             try
             {
