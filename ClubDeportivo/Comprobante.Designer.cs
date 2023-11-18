@@ -1,6 +1,4 @@
-﻿
-
-namespace ClubDeportivo
+﻿namespace ClubDeportivo
 {
     partial class FrmComprobante
     {

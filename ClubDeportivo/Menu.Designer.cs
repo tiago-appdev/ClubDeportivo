@@ -33,7 +33,7 @@
             btnSalir = new Button();
             btnRegistrar = new Button();
             btnPagarCuota = new Button();
-            btnNN = new Button();
+            btnListar = new Button();
             btnNN2 = new Button();
             SuspendLayout();
             // 
@@ -76,14 +76,15 @@
             btnPagarCuota.UseVisualStyleBackColor = true;
             btnPagarCuota.Click += btnPagarCuota_Click;
             // 
-            // btnNN
+            // btnListar
             // 
-            btnNN.Location = new Point(73, 265);
-            btnNN.Name = "btnNN";
-            btnNN.Size = new Size(231, 48);
-            btnNN.TabIndex = 4;
-            btnNN.Text = "NN";
-            btnNN.UseVisualStyleBackColor = true;
+            btnListar.Location = new Point(73, 265);
+            btnListar.Name = "btnListar";
+            btnListar.Size = new Size(231, 48);
+            btnListar.TabIndex = 4;
+            btnListar.Text = "LISTAR CLIENTES MOROSOS";
+            btnListar.UseVisualStyleBackColor = true;
+            btnListar.Click += btnListarMorosos_click;
             // 
             // btnNN2
             // 
@@ -101,7 +102,7 @@
             BackColor = Color.FromArgb(9, 179, 179);
             ClientSize = new Size(800, 450);
             Controls.Add(btnNN2);
-            Controls.Add(btnNN);
+            Controls.Add(btnListar);
             Controls.Add(btnPagarCuota);
             Controls.Add(btnRegistrar);
             Controls.Add(btnSalir);
@@ -121,7 +122,7 @@
         private Button btnSalir;
         private Button btnRegistrar;
         private Button btnPagarCuota;
-        private Button btnNN;
+        private Button btnListar;
         private Button btnNN2;
     }
 }

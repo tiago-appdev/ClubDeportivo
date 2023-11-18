@@ -78,3 +78,4 @@ C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\bin\Debug\net6.0-windows
 C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0-windows\ClubDeportivo.sourcelink.json
 C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0-windows\ClubDeportivo.FrmPago.resources
 C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0-windows\ClubDeportivo.FrmComprobante.resources
+C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0-windows\ClubDeportivo.FrmLista.resources

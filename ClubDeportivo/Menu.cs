@@ -42,5 +42,11 @@ namespace ClubDeportivo
             formularioDePago.Show();
             this.Hide();
         }
+        private void btnListarMorosos_click(object sender, EventArgs e)
+        {
+            FrmLista listaDeClientes = new FrmLista();
+            listaDeClientes.Show();
+            this.Hide();
+        }
     }
 }
