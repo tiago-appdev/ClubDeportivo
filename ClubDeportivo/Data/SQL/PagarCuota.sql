@@ -11,27 +11,27 @@ CREATE PROCEDURE PagarCuota(
 BEGIN
 
     IF Tip = 'Socio' THEN
-        UPDATE Cuotas
-        SET Pagada = 1
-        WHERE Cuota_id IN (
-            SELECT Cuota_id
-            FROM Socios
-            WHERE Cliente_id IN (
-                SELECT Cliente_id
-                FROM Clientes
-                WHERE DNI = dni
+        UPDATE Cuotas c
+        SET c.Pagada = 1
+        WHERE c.Cuota_id IN (
+            SELECT s.Cuota_id
+            FROM Socios s
+            WHERE s.Cliente_id IN (
+                SELECT c.Cliente_id
+                FROM Clientes c
+                WHERE c.DNI = Dni
             )
         );
     ELSE
-        UPDATE Cuotas
-        SET Pagada = 1
-        WHERE Cuota_id IN (
-            SELECT Cuota_id
-            FROM NoSocios
-            WHERE Cliente_id IN (
-                SELECT Cliente_id
-                FROM Clientes
-                WHERE DNI = dni
+        UPDATE Cuotas c
+        SET c.Pagada = 1
+        WHERE c.Cuota_id IN (
+            SELECT ns.Cuota_id
+            FROM NoSocios ns
+            WHERE ns.Cliente_id IN (
+                SELECT c.Cliente_id
+                FROM Clientes c
+                WHERE c.DNI = Dni
             )
         );
     END IF;
