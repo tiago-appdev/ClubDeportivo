@@ -136,7 +136,7 @@ namespace ClubDeportivo
             label1.Name = "label1";
             label1.Size = new Size(102, 15);
             label1.TabIndex = 3;
-            label1.Text = "Número de Socio:";
+            label1.Text = "Número de Cliente:";
             // 
             // socioNumberTextBox
             // 

@@ -10,7 +10,7 @@ namespace ClubDeportivo
         {
             InitializeComponent();
         }
-        
+
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
             // Chequear condiciones para habilitar o deshabilitar el boton de pago
@@ -89,6 +89,7 @@ SELECT
     cu.FechaDeVencimiento AS CuotaFechaVencimiento,
     cu.Monto AS CuotaMonto,
     cu.Cuota_id,
+    cu.Pagada,
     CASE
         WHEN c.Tipo = 'Socio' THEN 'Cuota Mensual'
         WHEN c.Tipo = 'No Socio' THEN 'Cuota por Actividad'
@@ -110,6 +111,11 @@ WHERE
                 if (reader.HasRows)
                 {
                     reader.Read();
+                    if (reader.GetBoolean(12))
+                    {
+                        MessageBox.Show("No tiene cuotas impagas", "AVISO DEL SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
                     if (reader.GetString(6) == "Socio")
                     {
                         cliente = new Socio(reader.GetString(1), reader.GetString(2), reader.GetString(4), reader.GetString(5), new Cuota(reader.GetDecimal(10)), 0, reader.GetString(3));

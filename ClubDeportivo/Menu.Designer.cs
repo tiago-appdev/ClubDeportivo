@@ -34,6 +34,7 @@
             btnRegistrar = new Button();
             btnPagarCuota = new Button();
             btnListar = new Button();
+            btnReimprimir = new Button();
             SuspendLayout();
             // 
             // lblIngreso
@@ -77,13 +78,23 @@
             // 
             // btnListar
             // 
-            btnListar.Location = new Point(294, 308);
+            btnListar.Location = new Point(73, 265);
             btnListar.Name = "btnListar";
             btnListar.Size = new Size(231, 48);
             btnListar.TabIndex = 4;
             btnListar.Text = "LISTAR CLIENTES MOROSOS";
             btnListar.UseVisualStyleBackColor = true;
             btnListar.Click += btnListarMorosos_click;
+            // 
+            // btnReimprimir
+            // 
+            btnReimprimir.Location = new Point(513, 265);
+            btnReimprimir.Name = "btnReimprimir";
+            btnReimprimir.Size = new Size(231, 48);
+            btnReimprimir.TabIndex = 5;
+            btnReimprimir.Text = "REIMPRIMIR CARNET";
+            btnReimprimir.UseVisualStyleBackColor = true;
+            btnReimprimir.Click += btnReimprimir_Click;
             // 
             // frmMenu
             // 
@@ -92,6 +103,7 @@
             BackColor = Color.FromArgb(9, 179, 179);
             ClientSize = new Size(800, 450);
             Controls.Add(btnListar);
+            Controls.Add(btnReimprimir);
             Controls.Add(btnPagarCuota);
             Controls.Add(btnRegistrar);
             Controls.Add(btnSalir);
@@ -112,5 +124,6 @@
         private Button btnRegistrar;
         private Button btnPagarCuota;
         private Button btnListar;
+        private Button btnReimprimir;
     }
 }

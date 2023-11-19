@@ -57,7 +57,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.FromArgb(248, 242, 228);
             label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(425, 88);
+            label1.Location = new Point(399, 89);
             label1.Name = "label1";
             label1.Size = new Size(203, 30);
             label1.TabIndex = 1;
@@ -79,7 +79,7 @@
             numSocio.AutoSize = true;
             numSocio.BackColor = Color.FromArgb(248, 242, 228);
             numSocio.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            numSocio.Location = new Point(548, 206);
+            numSocio.Location = new Point(528, 269);
             numSocio.Name = "numSocio";
             numSocio.Size = new Size(0, 37);
             numSocio.TabIndex = 3;
@@ -89,7 +89,7 @@
             label4.AutoSize = true;
             label4.BackColor = Color.FromArgb(248, 242, 228);
             label4.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(425, 216);
+            label4.Location = new Point(399, 273);
             label4.Name = "label4";
             label4.Size = new Size(123, 25);
             label4.TabIndex = 4;
@@ -113,7 +113,7 @@
             nroTarjeta.Font = new Font("Segoe UI", 40F, FontStyle.Regular, GraphicsUnit.Point);
             nroTarjeta.Location = new Point(203, 299);
             nroTarjeta.Name = "nroTarjeta";
-            nroTarjeta.Size = new Size(408, 72);
+            nroTarjeta.Size = new Size(0, 72);
             nroTarjeta.TabIndex = 6;
             // 
             // pictureBox2
@@ -155,6 +155,7 @@
             Controls.Add(pictureBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmCredencialSocio";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CredencialSocio";
             Load += CredencialSocio_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

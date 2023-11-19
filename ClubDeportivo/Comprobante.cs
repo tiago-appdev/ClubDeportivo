@@ -22,7 +22,7 @@ namespace ClubDeportivo
             nombreSocio.Text = nombre.ToUpper();
             label7.Text = nroComprobante;
             label10.Text = "NRO. " + tipo.ToUpper();
-            numSocio.Location = tipo == "Socio" ? new Point(400, 244) : new Point(448, 244);
+            numSocio.Location = tipo == "Socio" ? new Point(400, 246) : new Point(448, 246);
 
         }
 

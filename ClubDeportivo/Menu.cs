@@ -45,5 +45,12 @@ namespace ClubDeportivo
             listaDeClientes.Show();
             this.Hide();
         }
+        private void btnReimprimir_Click(object sender, EventArgs e)
+        {
+            FrmCarnet formularioDeReimpresion = new FrmCarnet();
+            formularioDeReimpresion.Show();
+            this.Hide();
+        }
+        
     }
 }

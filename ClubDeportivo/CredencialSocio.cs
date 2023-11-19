@@ -15,7 +15,15 @@ namespace ClubDeportivo
         private void CredencialSocio_Load(object sender, EventArgs e)
         {
             numSocio.Text = socio;
-            nombreCortoSocio.Text = nombre.ToUpper();
+            string[] nameParts = nombre.Split(' ');
+
+            string firstName = (nameParts.Length > 0) ? nameParts[0] : string.Empty;
+            string lastName = (nameParts.Length > 1) ? nameParts[1] : string.Empty;
+
+            string formattedName = $"{firstName}{Environment.NewLine}{lastName}";
+
+            nombreCortoSocio.Text = formattedName.ToUpper();
+
             // autogenerar numero de tarjeta en base a datos de cliente
             string generatedNumber = GenerateCredentialNumber(dni, socio);
             nroTarjeta.Text = generatedNumber;
