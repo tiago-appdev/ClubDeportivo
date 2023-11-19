@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net6.0-windows7.0": {
+      "BouncyCastle.Cryptography/2.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BouncyCastle.Cryptography.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "DotEnv.Core/3.0.0": {
         "type": "package",
         "compile": {
@@ -112,6 +125,23 @@
           }
         }
       },
+      "itext.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle.Cryptography": "2.2.1",
+          "itext.commons": "8.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/itext.bouncy-castle-adapter.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "itext.commons/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -133,6 +163,12 @@
         "type": "package",
         "dependencies": {
           "itext": "8.0.2"
+        }
+      },
+      "itext7.bouncy-castle-adapter/8.0.2": {
+        "type": "package",
+        "dependencies": {
+          "itext.bouncy-castle-adapter": "8.0.2"
         }
       },
       "K4os.Compression.LZ4/1.3.5": {
@@ -1742,6 +1778,26 @@
     }
   },
   "libraries": {
+    "BouncyCastle.Cryptography/2.2.1": {
+      "sha512": "A6Zr52zVqJKt18ZBsTnX0qhG0kwIQftVAjLmszmkiR/trSp8H+xj1gUOzk7XHwaKgyREMSV1v9XaKrBUeIOdvQ==",
+      "type": "package",
+      "path": "bouncycastle.cryptography/2.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "bouncycastle.cryptography.2.2.1.nupkg.sha512",
+        "bouncycastle.cryptography.nuspec",
+        "lib/net461/BouncyCastle.Cryptography.dll",
+        "lib/net461/BouncyCastle.Cryptography.xml",
+        "lib/net6.0/BouncyCastle.Cryptography.dll",
+        "lib/net6.0/BouncyCastle.Cryptography.xml",
+        "lib/netstandard2.0/BouncyCastle.Cryptography.dll",
+        "lib/netstandard2.0/BouncyCastle.Cryptography.xml",
+        "packageIcon.png"
+      ]
+    },
     "DotEnv.Core/3.0.0": {
       "sha512": "RGSFfhh9N0kBw5vIuJ0vo0pxuirWfZnoPBRkB2/5Lx1IIdg3cd8frZxkPotn5ku8hZ6iiG+56ou2BcLZEHugVQ==",
       "type": "package",
@@ -1835,6 +1891,22 @@
         "lib/netstandard2.0/itext.svg.xml"
       ]
     },
+    "itext.bouncy-castle-adapter/8.0.2": {
+      "sha512": "djCnycEdSBcpRxPOm0vAwGiOBZRT6GX7kyg/Jezk0AsMuq2d6Qd4md8AzTcgnEaTLwc717QK6QVmzbT30wdG7w==",
+      "type": "package",
+      "path": "itext.bouncy-castle-adapter/8.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ITSC-avatar.png",
+        "itext.bouncy-castle-adapter.8.0.2.nupkg.sha512",
+        "itext.bouncy-castle-adapter.nuspec",
+        "lib/net461/itext.bouncy-castle-adapter.dll",
+        "lib/net461/itext.bouncy-castle-adapter.xml",
+        "lib/netstandard2.0/itext.bouncy-castle-adapter.dll",
+        "lib/netstandard2.0/itext.bouncy-castle-adapter.xml"
+      ]
+    },
     "itext.commons/8.0.2": {
       "sha512": "/F7j7XERA84XgIXDb4j/so1GagAToraVKZIRAdk/ibkvYoU1uwuILU2Ly28sSFf12NN7WIBQHKSk7njJl7Nk8g==",
       "type": "package",
@@ -1863,6 +1935,20 @@
         "gnu-agpl-v3.0.md",
         "itext7.8.0.2.nupkg.sha512",
         "itext7.nuspec"
+      ]
+    },
+    "itext7.bouncy-castle-adapter/8.0.2": {
+      "sha512": "cNtEkxFStPblWys1uhafXkUuSGFAH9vFqZ4H09IZPMo5TzJbjbeklgmBGrFu7IPHtOym03+1RHzVEKzfcd1deQ==",
+      "type": "package",
+      "path": "itext7.bouncy-castle-adapter/8.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ITSC-avatar.png",
+        "LICENSE.md",
+        "gnu-agpl-v3.0.md",
+        "itext7.bouncy-castle-adapter.8.0.2.nupkg.sha512",
+        "itext7.bouncy-castle-adapter.nuspec"
       ]
     },
     "K4os.Compression.LZ4/1.3.5": {
@@ -5674,7 +5760,8 @@
     "net6.0-windows7.0": [
       "DotEnv.Core >= 3.0.0",
       "MySql.Data >= 8.1.0",
-      "itext7 >= 8.0.2"
+      "itext7 >= 8.0.2",
+      "itext7.bouncy-castle-adapter >= 8.0.2"
     ]
   },
   "packageFolders": {
@@ -5730,6 +5817,10 @@
             "version": "[8.1.0, )"
           },
           "itext7": {
+            "target": "Package",
+            "version": "[8.0.2, )"
+          },
+          "itext7.bouncy-castle-adapter": {
             "target": "Package",
             "version": "[8.0.2, )"
           }

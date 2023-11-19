@@ -100,3 +100,5 @@ C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\bin\Debug\net6.0-windows
 C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\bin\Debug\net6.0-windows\Microsoft.Extensions.Options.dll
 C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
 C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\bin\Debug\net6.0-windows\BouncyCastle.Cryptography.dll
+C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\bin\Debug\net6.0-windows\itext.bouncy-castle-adapter.dll

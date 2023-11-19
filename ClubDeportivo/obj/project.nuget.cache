@@ -1,14 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "8H1x5hzvlpG7XMRWWo/dZL7yrJUq0Oqwzt3+/ococ2wUIliCH8zfP3tVWxGPXrIYt6F9FzE0f3MfrqNv8JD9hA==",
+  "dgSpecHash": "+ucE5IE8Qjqjw0qjvGi+PHsFI2YeILRYZFXl6hm+jMPJsjy2eVUBz9ULzM0uswZDoe39CfcAjmzZUEvEGfv6rg==",
   "success": true,
   "projectFilePath": "C:\\Users\\DARIO\\source\\repos\\ClubDeportivo\\ClubDeportivo\\ClubDeportivo.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\DARIO\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "C:\\Users\\DARIO\\.nuget\\packages\\dotenv.core\\3.0.0\\dotenv.core.3.0.0.nupkg.sha512",
     "C:\\Users\\DARIO\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
     "C:\\Users\\DARIO\\.nuget\\packages\\itext\\8.0.2\\itext.8.0.2.nupkg.sha512",
+    "C:\\Users\\DARIO\\.nuget\\packages\\itext.bouncy-castle-adapter\\8.0.2\\itext.bouncy-castle-adapter.8.0.2.nupkg.sha512",
     "C:\\Users\\DARIO\\.nuget\\packages\\itext.commons\\8.0.2\\itext.commons.8.0.2.nupkg.sha512",
     "C:\\Users\\DARIO\\.nuget\\packages\\itext7\\8.0.2\\itext7.8.0.2.nupkg.sha512",
+    "C:\\Users\\DARIO\\.nuget\\packages\\itext7.bouncy-castle-adapter\\8.0.2\\itext7.bouncy-castle-adapter.8.0.2.nupkg.sha512",
     "C:\\Users\\DARIO\\.nuget\\packages\\k4os.compression.lz4\\1.3.5\\k4os.compression.lz4.1.3.5.nupkg.sha512",
     "C:\\Users\\DARIO\\.nuget\\packages\\k4os.compression.lz4.streams\\1.3.5\\k4os.compression.lz4.streams.1.3.5.nupkg.sha512",
     "C:\\Users\\DARIO\\.nuget\\packages\\k4os.hash.xxhash\\1.0.8\\k4os.hash.xxhash.1.0.8.nupkg.sha512",
