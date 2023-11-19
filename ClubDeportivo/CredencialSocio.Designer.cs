@@ -1,6 +1,6 @@
 ﻿namespace ClubDeportivo
 {
-    partial class CredencialSocio
+    partial class FrmCredencialSocio
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CredencialSocio));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCredencialSocio));
             pictureBox1 = new PictureBox();
             label1 = new Label();
             nombreCortoSocio = new Label();
@@ -37,6 +37,7 @@
             label5 = new Label();
             nroTarjeta = new Label();
             pictureBox2 = new PictureBox();
+            buttonImprimir = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -62,7 +63,6 @@
             label1.TabIndex = 1;
             label1.Text = "CREDENCIAL SOCIO\r";
             label1.TextAlign = ContentAlignment.TopCenter;
-            label1.Click += label1_Click;
             // 
             // nombreCortoSocio
             // 
@@ -71,10 +71,8 @@
             nombreCortoSocio.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point);
             nombreCortoSocio.Location = new Point(399, 153);
             nombreCortoSocio.Name = "nombreCortoSocio";
-            nombreCortoSocio.Size = new Size(247, 45);
+            nombreCortoSocio.Size = new Size(0, 45);
             nombreCortoSocio.TabIndex = 2;
-            nombreCortoSocio.Text = "PEDRO FLORES";
-            nombreCortoSocio.Click += label2_Click;
             // 
             // numSocio
             // 
@@ -83,10 +81,8 @@
             numSocio.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
             numSocio.Location = new Point(533, 208);
             numSocio.Name = "numSocio";
-            numSocio.Size = new Size(113, 37);
+            numSocio.Size = new Size(0, 37);
             numSocio.TabIndex = 3;
-            numSocio.Text = "121223";
-            numSocio.Click += label3_Click;
             // 
             // label4
             // 
@@ -97,7 +93,7 @@
             label4.Name = "label4";
             label4.Size = new Size(116, 25);
             label4.TabIndex = 4;
-            label4.Text = "SOCIO Nro.:";
+            label4.Text = "SOCIO NRO.:";
             // 
             // label5
             // 
@@ -109,7 +105,6 @@
             label5.Size = new Size(108, 30);
             label5.TabIndex = 5;
             label5.Text = "TARJETA";
-            label5.Click += label5_Click;
             // 
             // nroTarjeta
             // 
@@ -133,12 +128,24 @@
             pictureBox2.TabIndex = 7;
             pictureBox2.TabStop = false;
             // 
-            // CredencialSocio
+            // buttonImprimir
+            // 
+            buttonImprimir.Font = new Font("Consolas", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            buttonImprimir.Location = new Point(620, 408);
+            buttonImprimir.Name = "buttonImprimir";
+            buttonImprimir.Size = new Size(93, 30);
+            buttonImprimir.TabIndex = 12;
+            buttonImprimir.Text = "IMPRIMIR";
+            buttonImprimir.UseVisualStyleBackColor = true;
+            buttonImprimir.Click += buttonImprimir_Click;
+            // 
+            // FrmCredencialSocio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(9, 179, 179);
             ClientSize = new Size(800, 450);
+            Controls.Add(buttonImprimir);
             Controls.Add(label1);
             Controls.Add(pictureBox2);
             Controls.Add(nroTarjeta);
@@ -148,8 +155,9 @@
             Controls.Add(nombreCortoSocio);
             Controls.Add(pictureBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "CredencialSocio";
+            Name = "FrmCredencialSocio";
             Text = "CredencialSocio";
+            Load += CredencialSocio_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
@@ -165,6 +173,9 @@
         private Label label4;
         private Label label5;
         private Label nroTarjeta;
+        public String socio;
+        public String nombre;
         private PictureBox pictureBox2;
+        private Button buttonImprimir;
     }
 }

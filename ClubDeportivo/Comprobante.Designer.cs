@@ -242,6 +242,7 @@
         public string fechaActual;
         public string? actividad;
         public Decimal monto;
+        public FrmCredencialSocio formularioDeCarnet = new();
         public DateTime fecha_f = DateTime.Now;
         private GroupBox groupBox1;
         private GroupBox groupBox2;

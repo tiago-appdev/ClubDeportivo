@@ -67,8 +67,8 @@
             txtUsuario.Tag = "";
             txtUsuario.Text = "USUARIO";
             txtUsuario.Enter += txtUsuario_Enter;
-            txtUsuario.Leave += txtUsuario_Leave;
             txtUsuario.KeyPress += txtUsuario_KeyPress;
+            txtUsuario.Leave += txtUsuario_Leave;
             // 
             // txtPass
             // 
@@ -78,13 +78,13 @@
             txtPass.TabIndex = 3;
             txtPass.Text = "CONTRASEÑA";
             txtPass.Enter += txtPass_Enter;
-            txtPass.Leave += txtPass_Leave;
             txtPass.KeyPress += txtPass_KeyPress;
+            txtPass.Leave += txtPass_Leave;
             // 
             // btnIngresar
             // 
             btnIngresar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnIngresar.ForeColor = SystemColors.ActiveCaptionText;
+            btnIngresar.ForeColor = SystemColors.ActiveCaption;
             btnIngresar.Location = new Point(548, 292);
             btnIngresar.Name = "btnIngresar";
             btnIngresar.Size = new Size(97, 39);
@@ -93,7 +93,7 @@
             btnIngresar.UseVisualStyleBackColor = true;
             btnIngresar.Click += btnIngresar_Click;
             // 
-            // frmInicio
+            // FrmInicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;

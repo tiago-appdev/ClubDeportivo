@@ -20,8 +20,8 @@ namespace ClubDeportivo
             formaPago.Text = formaDePago.ToUpper();
             montoPesos.Text = monto.ToString();
             nombreSocio.Text = nombre.ToUpper();
-            label7.Text = "Nro. " + nroComprobante;
-            label10.Text = "Nro. " + tipo.ToUpper();
+            label7.Text = nroComprobante;
+            label10.Text = "NRO. " + tipo.ToUpper();
             numSocio.Location = tipo == "Socio" ? new Point(388, 247) : new Point(448, 247);
 
         }
@@ -78,8 +78,17 @@ namespace ClubDeportivo
                     MessageBox.Show("Operación cancelada", "AVISO DEL SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
-                frmMenu menuPrincipal = new frmMenu();
-                menuPrincipal.Show();
+                if (tipo == "Socio")
+                {
+                    formularioDeCarnet.nombre = nombre;
+                    formularioDeCarnet.socio = socio;
+                    formularioDeCarnet.Show();
+                }
+                else
+                {
+                    frmMenu menuPrincipal = new frmMenu();
+                    menuPrincipal.Show();
+                }
                 this.Hide();
             }
             catch (Exception ex)

@@ -118,7 +118,7 @@ WHERE
                     {
                         cliente = new NoSocio(reader.GetString(1), reader.GetString(2), reader.GetString(4), reader.GetString(5), new Cuota(reader.GetDecimal(8)), 0, reader.GetString(3));
                         label2.Visible = true;
-                    cuotaAmountTextBox.Location = new Point(cuotaAmountTextBox.Location.X, cuotaAmountTextBox.Location.Y + 35);
+                        cuotaAmountTextBox.Location = new Point(cuotaAmountTextBox.Location.X, cuotaAmountTextBox.Location.Y + 35);
                         label3.Location = new Point(label3.Location.X, label3.Location.Y + 35);
                         radioButton1.Location = new Point(radioButton1.Location.X, radioButton1.Location.Y + 35);
                         radioButton2.Location = new Point(radioButton2.Location.X, radioButton2.Location.Y + 35);

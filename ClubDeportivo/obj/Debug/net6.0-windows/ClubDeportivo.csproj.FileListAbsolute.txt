@@ -79,7 +79,6 @@ C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0-windows
 C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0-windows\ClubDeportivo.FrmPago.resources
 C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0-windows\ClubDeportivo.FrmComprobante.resources
 C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0-windows\ClubDeportivo.FrmLista.resources
-C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0-windows\ClubDeportivo.CredencialSocio.resources
 C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\bin\Debug\net6.0-windows\itext.barcodes.dll
 C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\bin\Debug\net6.0-windows\itext.bouncy-castle-connector.dll
 C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\bin\Debug\net6.0-windows\itext.forms.dll
@@ -102,3 +101,4 @@ C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\bin\Debug\net6.0-windows
 C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
 C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\bin\Debug\net6.0-windows\BouncyCastle.Cryptography.dll
 C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\bin\Debug\net6.0-windows\itext.bouncy-castle-adapter.dll
+C:\Users\DARIO\source\repos\ClubDeportivo\ClubDeportivo\obj\Debug\net6.0-windows\ClubDeportivo.FrmCredencialSocio.resources
