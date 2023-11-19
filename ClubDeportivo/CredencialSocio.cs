@@ -79,25 +79,44 @@ namespace ClubDeportivo
                 MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        public static Bitmap ScreenshotDeFormulario(Form window)
+        public static Bitmap ScreenshotDeFormulario(FrmCredencialSocio form)
         {
-            var b = new Bitmap(window.Width, window.Height);
-            window.DrawToBitmap(b, new Rectangle(0, 0, window.Width, window.Height));
+            Bitmap background = new Bitmap(form.Width, form.Height);
 
-            Point p = window.PointToScreen(Point.Empty);
+            using (Graphics g = Graphics.FromImage(background))
+            {
+                form.DrawToBitmap(background, new Rectangle(0, 0, form.Width, form.Height));
+            }
 
-            Bitmap target = new Bitmap(window.ClientSize.Width, window.ClientSize.Height);
+            Point p = form.PointToScreen(Point.Empty);
+
+            Bitmap target = new Bitmap(form.ClientSize.Width, form.ClientSize.Height);
+
             using (Graphics g = Graphics.FromImage(target))
             {
-                g.DrawImage(b, 0, 0,
-                            new Rectangle(p.X - window.Location.X, p.Y - window.Location.Y,
-                                          target.Width, target.Height),
-                           GraphicsUnit.Pixel);
+                g.DrawImage(background, 0, 0,
+            new Rectangle(p.X - form.Location.X, p.Y - form.Location.Y,
+                          target.Width, target.Height),
+           GraphicsUnit.Pixel);
+
+
+                g.DrawImage(form.pictureBox2.Image, form.pictureBox2.Location.X, form.pictureBox2.Location.Y, form.pictureBox2.Width, form.pictureBox2.Height);
+
+                g.DrawString(form.label1.Text, form.label1.Font, Brushes.Black, form.label1.Location.X, form.label1.Location.Y);
+                g.DrawString(form.nombreCortoSocio.Text, form.nombreCortoSocio.Font, Brushes.Black, form.nombreCortoSocio.Location.X, form.nombreCortoSocio.Location.Y);
+                g.DrawString(form.numSocio.Text, form.numSocio.Font, Brushes.Black, form.numSocio.Location.X, form.numSocio.Location.Y);
+                g.DrawString(form.label4.Text, form.label4.Font, Brushes.Black, form.label4.Location.X, form.label4.Location.Y);
+                g.DrawString(form.label5.Text, form.label5.Font, Brushes.Black, form.label5.Location.X, form.label5.Location.Y);
+                g.DrawString(form.nroTarjeta.Text, form.nroTarjeta.Font, Brushes.Black, form.nroTarjeta.Location.X, form.nroTarjeta.Location.Y);
+
+
             }
-            b.Dispose();
+
+            background.Dispose();
             return target;
         }
+
+
 
 
         private void ImprimirForm1(object o, PrintPageEventArgs e)

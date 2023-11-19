@@ -79,7 +79,7 @@
             numSocio.AutoSize = true;
             numSocio.BackColor = Color.FromArgb(248, 242, 228);
             numSocio.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            numSocio.Location = new Point(533, 208);
+            numSocio.Location = new Point(548, 206);
             numSocio.Name = "numSocio";
             numSocio.Size = new Size(0, 37);
             numSocio.TabIndex = 3;
@@ -91,7 +91,7 @@
             label4.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label4.Location = new Point(425, 216);
             label4.Name = "label4";
-            label4.Size = new Size(116, 25);
+            label4.Size = new Size(123, 25);
             label4.TabIndex = 4;
             label4.Text = "SOCIO NRO.:";
             // 
