@@ -12,6 +12,22 @@ namespace ClubDeportivo
             InitializeComponent();
         }
 
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnIngresar.PerformClick();
+            }
+        }
+
+        private void txtPass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnIngresar.PerformClick();
+            }
+        }
+
         private void txtUsuario_Enter(object sender, EventArgs e)
         {
             if (txtUsuario.Text == @"USUARIO")

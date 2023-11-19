@@ -68,6 +68,7 @@
             txtUsuario.Text = "USUARIO";
             txtUsuario.Enter += txtUsuario_Enter;
             txtUsuario.Leave += txtUsuario_Leave;
+            txtUsuario.KeyPress += txtUsuario_KeyPress;
             // 
             // txtPass
             // 
@@ -78,6 +79,7 @@
             txtPass.Text = "CONTRASEÑA";
             txtPass.Enter += txtPass_Enter;
             txtPass.Leave += txtPass_Leave;
+            txtPass.KeyPress += txtPass_KeyPress;
             // 
             // btnIngresar
             // 
