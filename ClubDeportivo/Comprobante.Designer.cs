@@ -239,6 +239,7 @@
         public string nombre;
         public string tipo;
         public string formaDePago;
+        public string dni;
         public string fechaActual;
         public string? actividad;
         public Decimal monto;

@@ -14,8 +14,23 @@ namespace ClubDeportivo
         }
         private void CredencialSocio_Load(object sender, EventArgs e)
         {
-            numSocio.Text = socio.ToUpper();
+            numSocio.Text = socio;
             nombreCortoSocio.Text = nombre.ToUpper();
+            // autogenerar numero de tarjeta en base a datos de cliente
+            string generatedNumber = GenerateCredentialNumber(dni, socio);
+            nroTarjeta.Text = generatedNumber;
+        }
+
+        private string GenerateCredentialNumber(string dni, string socioNumber)
+        {
+            string year = DateTime.Now.Year.ToString().Substring(2);
+
+            dni = dni.PadLeft(8, '0').Substring(0, 8);
+            socioNumber = socioNumber.PadLeft(2, '0').Substring(0, 2);
+
+            string generatedNumber = $"{dni}{socioNumber}{year}";
+
+            return $"{generatedNumber.Substring(0, 4)} {generatedNumber.Substring(4, 4)} {generatedNumber.Substring(8, 4)}";
         }
 
         private void buttonImprimir_Click(object sender, EventArgs e)

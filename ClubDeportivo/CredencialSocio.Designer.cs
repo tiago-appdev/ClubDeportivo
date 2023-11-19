@@ -115,7 +115,6 @@
             nroTarjeta.Name = "nroTarjeta";
             nroTarjeta.Size = new Size(408, 72);
             nroTarjeta.TabIndex = 6;
-            nroTarjeta.Text = "0123 4567 8901";
             // 
             // pictureBox2
             // 
@@ -174,6 +173,7 @@
         private Label label5;
         private Label nroTarjeta;
         public String socio;
+        public String dni;
         public String nombre;
         private PictureBox pictureBox2;
         private Button buttonImprimir;

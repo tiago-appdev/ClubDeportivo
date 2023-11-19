@@ -14,7 +14,7 @@ namespace ClubDeportivo
 
         private void ComprobanteForm_Load(object sender, EventArgs e)
         {
-            numSocio.Text = socio.ToUpper();
+            numSocio.Text = socio;
             fecha.Text = fechaActual;
             tipoSocio.Text = tipo.ToUpper();
             formaPago.Text = formaDePago.ToUpper();
@@ -22,7 +22,7 @@ namespace ClubDeportivo
             nombreSocio.Text = nombre.ToUpper();
             label7.Text = nroComprobante;
             label10.Text = "NRO. " + tipo.ToUpper();
-            numSocio.Location = tipo == "Socio" ? new Point(388, 247) : new Point(448, 247);
+            numSocio.Location = tipo == "Socio" ? new Point(400, 244) : new Point(448, 244);
 
         }
 
@@ -82,6 +82,7 @@ namespace ClubDeportivo
                 {
                     formularioDeCarnet.nombre = nombre;
                     formularioDeCarnet.socio = socio;
+                    formularioDeCarnet.dni = dni;
                     formularioDeCarnet.Show();
                 }
                 else

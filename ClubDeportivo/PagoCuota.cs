@@ -133,6 +133,7 @@ WHERE
                     comprobante.monto = cliente.Cuota.Monto;
                     comprobante.nombre = cliente.Nombre + " " + cliente.Apellido;
                     comprobante.nroComprobante = reader.GetString(11);
+                    comprobante.dni = cliente.Dni;
 
                     cuotaAmountTextBox.Text = cliente.Cuota.Monto.ToString();
 
