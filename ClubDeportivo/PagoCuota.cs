@@ -10,14 +10,14 @@ namespace ClubDeportivo
         {
             InitializeComponent();
         }
-
-                private void TextBox_TextChanged(object sender, EventArgs e)
+        
+        private void TextBox_TextChanged(object sender, EventArgs e)
         {
             // Chequear condiciones para habilitar o deshabilitar el boton de pago
             bool isCuotaAmountValid = !string.IsNullOrEmpty(cuotaAmountTextBox.Text);
             bool isFormaDePagoSelected = radioButton1.Checked || ((radioButton2.Checked && !string.IsNullOrEmpty(cardNumberTextBox.Text) && !string.IsNullOrEmpty(cardExpirationTextBox.Text) && !string.IsNullOrEmpty(cardCvvTextBox.Text)));
-
-            pagarButton.Enabled = isCuotaAmountValid && isFormaDePagoSelected;
+            bool isActivitySelected = activityComboBox.SelectedIndex != -1 || cliente.Tipo != "No Socio";
+            pagarButton.Enabled = isCuotaAmountValid && isFormaDePagoSelected && isActivitySelected;
         }
 
 
@@ -118,6 +118,12 @@ WHERE
                     {
                         cliente = new NoSocio(reader.GetString(1), reader.GetString(2), reader.GetString(4), reader.GetString(5), new Cuota(reader.GetDecimal(8)), 0, reader.GetString(3));
                         label2.Visible = true;
+                    cuotaAmountTextBox.Location = new Point(cuotaAmountTextBox.Location.X, cuotaAmountTextBox.Location.Y + 35);
+                        label3.Location = new Point(label3.Location.X, label3.Location.Y + 35);
+                        radioButton1.Location = new Point(radioButton1.Location.X, radioButton1.Location.Y + 35);
+                        radioButton2.Location = new Point(radioButton2.Location.X, radioButton2.Location.Y + 35);
+                        volverButton.Location = new Point(volverButton.Location.X, volverButton.Location.Y + 35);
+                        pagarButton.Location = new Point(pagarButton.Location.X, pagarButton.Location.Y + 35);
                         activityComboBox.Visible = true;
                     }
 

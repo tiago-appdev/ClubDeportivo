@@ -144,15 +144,14 @@
             label10.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             label10.Location = new Point(268, 246);
             label10.Name = "label10";
-            label10.Size = new Size(126, 30);
+            label10.Size = new Size(0, 30);
             label10.TabIndex = 5;
-            label10.Text = "Nro. SOCIO:";
             // 
             // numSocio
             // 
             numSocio.AutoSize = true;
             numSocio.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            numSocio.Location = new Point(388, 247);
+            //numSocio.Location = new Point(388, 247);
             numSocio.Name = "numSocio";
             numSocio.Size = new Size(0, 30);
             numSocio.TabIndex = 6;

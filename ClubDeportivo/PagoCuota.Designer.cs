@@ -50,9 +50,8 @@ namespace ClubDeportivo
 
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPago));
-            radioButton1 = new System.Windows.Forms.RadioButton();
-            radioButton2 = new System.Windows.Forms.RadioButton();
+            radioButton1 = new RadioButton();
+            radioButton2 = new RadioButton();
             verificarSocioButton = new Button();
             pagarButton = new Button();
             volverButton = new Button();
@@ -70,58 +69,24 @@ namespace ClubDeportivo
             cardCvvTextBox = new TextBox();
             label7 = new Label();
             cuotasComboBox = new ComboBox();
-
-            label7.AutoSize = true;
-            label7.Location = new Point(501, 170);
-            label7.Margin = new Padding(4, 0, 4, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(50, 15);
-            label7.TabIndex = 13;
-            label7.Text = "Cuotas:";
-
-            cuotasComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            cuotasComboBox.FormattingEnabled = true;
-            cuotasComboBox.Items.AddRange(new object[] { "1", "3", "6" });
-            cuotasComboBox.Location = new Point(641, 166);
-            cuotasComboBox.Margin = new Padding(4, 3, 4, 3);
-            cuotasComboBox.Name = "cuotasComboBox";
-            cuotasComboBox.Size = new Size(60, 23);
-            cuotasComboBox.TabIndex = 14;
-
-
-            label4.Visible = false;
-            cardNumberTextBox.Visible = false;
-            label5.Visible = false;
-            cardExpirationTextBox.Visible = false;
-            label6.Visible = false;
-            cardCvvTextBox.Visible = false;
-            label7.Visible = false;
-            cuotasComboBox.Visible = false;
-            cuotasComboBox.SelectedIndex = 0;
             SuspendLayout();
-
-            radioButton1.CheckedChanged += TextBox_TextChanged;
-            cuotaAmountTextBox.TextChanged += TextBox_TextChanged;
-            cardNumberTextBox.TextChanged += TextBox_TextChanged;
-            cardExpirationTextBox.TextChanged += TextBox_TextChanged;
-            cardCvvTextBox.TextChanged += TextBox_TextChanged;
-
             // 
             // radioButton1
             // 
             radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(79, 170);
+            radioButton1.Location = new Point(79, 170 - 35);
             radioButton1.Name = "radioButton1";
             radioButton1.Size = new Size(67, 19);
             radioButton1.TabIndex = 10;
             radioButton1.TabStop = true;
             radioButton1.Text = "Efectivo";
             radioButton1.UseVisualStyleBackColor = true;
+            radioButton1.CheckedChanged += TextBox_TextChanged;
             // 
             // radioButton2
             // 
             radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(201, 170);
+            radioButton2.Location = new Point(201, 170 - 35);
             radioButton2.Name = "radioButton2";
             radioButton2.Size = new Size(59, 19);
             radioButton2.TabIndex = 11;
@@ -137,31 +102,31 @@ namespace ClubDeportivo
             verificarSocioButton.Size = new Size(75, 23);
             verificarSocioButton.TabIndex = 12;
             verificarSocioButton.Text = "Verificar Socio";
-            verificarSocioButton.Click += verificarSocioButton_Click;
             verificarSocioButton.UseVisualStyleBackColor = true;
+            verificarSocioButton.Click += verificarSocioButton_Click;
             // 
             // pagarButton
             // 
             pagarButton.Enabled = false;
-            pagarButton.Location = new Point(75, 215);
+            pagarButton.Location = new Point(75, 215 - 35);
             pagarButton.Margin = new Padding(4, 3, 4, 3);
             pagarButton.Name = "pagarButton";
             pagarButton.Size = new Size(88, 27);
             pagarButton.TabIndex = 1;
             pagarButton.Text = "Pagar";
-            pagarButton.Click += pagarButton_Click;
             pagarButton.UseVisualStyleBackColor = true;
+            pagarButton.Click += pagarButton_Click;
             // 
             // volverButton
             // 
-            volverButton.Location = new Point(201, 215);
+            volverButton.Location = new Point(201, 215 - 35);
             volverButton.Margin = new Padding(4, 3, 4, 3);
             volverButton.Name = "volverButton";
             volverButton.Size = new Size(88, 27);
             volverButton.TabIndex = 2;
             volverButton.Text = "Volver";
-            volverButton.Click += volverButton_Click;
             volverButton.UseVisualStyleBackColor = true;
+            volverButton.Click += volverButton_Click;
             // 
             // label1
             // 
@@ -194,7 +159,6 @@ namespace ClubDeportivo
             // 
             // activityComboBox
             // 
-            activityComboBox.Visible = false;
             activityComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             activityComboBox.FormattingEnabled = true;
             activityComboBox.Items.AddRange(new object[] { "Fútbol", "Natación", "Tenis" });
@@ -203,11 +167,13 @@ namespace ClubDeportivo
             activityComboBox.Name = "activityComboBox";
             activityComboBox.Size = new Size(140, 23);
             activityComboBox.TabIndex = 5;
+            activityComboBox.Visible = false;
+            activityComboBox.SelectedIndexChanged += TextBox_TextChanged;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(75, 135);
+            label3.Location = new Point(75, 135 - 35);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(81, 15);
@@ -216,12 +182,13 @@ namespace ClubDeportivo
             // 
             // cuotaAmountTextBox
             // 
-            cuotaAmountTextBox.Location = new Point(201, 132);
+            cuotaAmountTextBox.Location = new Point(201, 132 - 35);
             cuotaAmountTextBox.Margin = new Padding(4, 3, 4, 3);
             cuotaAmountTextBox.Name = "cuotaAmountTextBox";
             cuotaAmountTextBox.ReadOnly = true;
             cuotaAmountTextBox.Size = new Size(116, 23);
             cuotaAmountTextBox.TabIndex = 6;
+            cuotaAmountTextBox.TextChanged += TextBox_TextChanged;
             // 
             // label4
             // 
@@ -232,6 +199,7 @@ namespace ClubDeportivo
             label4.Size = new Size(91, 15);
             label4.TabIndex = 6;
             label4.Text = "Número Tarjeta:";
+            label4.Visible = false;
             // 
             // cardNumberTextBox
             // 
@@ -240,6 +208,8 @@ namespace ClubDeportivo
             cardNumberTextBox.Name = "cardNumberTextBox";
             cardNumberTextBox.Size = new Size(116, 23);
             cardNumberTextBox.TabIndex = 7;
+            cardNumberTextBox.Visible = false;
+            cardNumberTextBox.TextChanged += TextBox_TextChanged;
             // 
             // label5
             // 
@@ -250,6 +220,7 @@ namespace ClubDeportivo
             label5.Size = new Size(115, 15);
             label5.TabIndex = 7;
             label5.Text = "Fecha de Expiración:";
+            label5.Visible = false;
             // 
             // cardExpirationTextBox
             // 
@@ -258,6 +229,8 @@ namespace ClubDeportivo
             cardExpirationTextBox.Name = "cardExpirationTextBox";
             cardExpirationTextBox.Size = new Size(116, 23);
             cardExpirationTextBox.TabIndex = 8;
+            cardExpirationTextBox.Visible = false;
+            cardExpirationTextBox.TextChanged += TextBox_TextChanged;
             // 
             // label6
             // 
@@ -268,6 +241,7 @@ namespace ClubDeportivo
             label6.Size = new Size(32, 15);
             label6.TabIndex = 8;
             label6.Text = "CVV:";
+            label6.Visible = false;
             // 
             // cardCvvTextBox
             // 
@@ -276,8 +250,33 @@ namespace ClubDeportivo
             cardCvvTextBox.Name = "cardCvvTextBox";
             cardCvvTextBox.Size = new Size(116, 23);
             cardCvvTextBox.TabIndex = 9;
+            cardCvvTextBox.Visible = false;
+            cardCvvTextBox.TextChanged += TextBox_TextChanged;
             // 
-            // PagoCuota
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(501, 170);
+            label7.Margin = new Padding(4, 0, 4, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(47, 15);
+            label7.TabIndex = 13;
+            label7.Text = "Cuotas:";
+            label7.Visible = false;
+            // 
+            // cuotasComboBox
+            // 
+            cuotasComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            cuotasComboBox.FormattingEnabled = true;
+            cuotasComboBox.Items.AddRange(new object[] { "1", "3", "6" });
+            cuotasComboBox.Location = new Point(641, 166);
+            cuotasComboBox.Margin = new Padding(4, 3, 4, 3);
+            cuotasComboBox.Name = "cuotasComboBox";
+            cuotasComboBox.Size = new Size(60, 23);
+            cuotasComboBox.TabIndex = 14;
+            cuotasComboBox.Visible = false;
+            // 
+            // FrmPago
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -303,9 +302,9 @@ namespace ClubDeportivo
             Controls.Add(label7);
             Controls.Add(cuotasComboBox);
             Margin = new Padding(4, 3, 4, 3);
-            Name = "PagoCuota";
-            Text = "PagoCuota";
+            Name = "FrmPago";
             StartPosition = FormStartPosition.CenterScreen;
+            Text = "PagoCuota";
             ResumeLayout(false);
             PerformLayout();
         }

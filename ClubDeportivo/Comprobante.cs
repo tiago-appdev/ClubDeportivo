@@ -21,6 +21,8 @@ namespace ClubDeportivo
             montoPesos.Text = monto.ToString();
             nombreSocio.Text = nombre.ToUpper();
             label7.Text = "Nro. " + nroComprobante;
+            label10.Text = "Nro. " + tipo.ToUpper();
+            numSocio.Location = tipo == "Socio" ? new Point(388, 247) : new Point(448, 247);
 
         }
 
@@ -70,12 +72,15 @@ namespace ClubDeportivo
 
                     MessageBox.Show("Operación existosa", "AVISO DEL SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    frmMenu menuPrincipal = new frmMenu();
-                    menuPrincipal.Show();
-                    this.Hide();
-                } else {
+                }
+                else
+                {
                     MessageBox.Show("Operación cancelada", "AVISO DEL SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+
+                frmMenu menuPrincipal = new frmMenu();
+                menuPrincipal.Show();
+                this.Hide();
             }
             catch (Exception ex)
             {
