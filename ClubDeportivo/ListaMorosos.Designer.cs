@@ -38,6 +38,8 @@ namespace ClubDeportivo
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(853, 486);
+            this.AutoSize = true;
+            this.AutoSizeMode = AutoSizeMode.GrowOnly;
             Controls.Add(dataGridViewCuotasPendientes);
             Controls.Add(volverMainMenuButton);
             Name = "FrmLista";
@@ -54,12 +56,7 @@ namespace ClubDeportivo
 
         private void volverMainMenuButton_Click(object sender, EventArgs e)
         {
-            // Logic to return to the main menu
-            frmMenu menuPrincipal = new frmMenu()
-            {
-                rol = FrmInicio.Rol,
-                usuario = FrmInicio.Usuario
-            };
+            frmMenu menuPrincipal = new frmMenu();
             menuPrincipal.Show();
             this.Hide();
         }

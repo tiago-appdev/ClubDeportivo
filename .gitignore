@@ -323,6 +323,11 @@ paket-files/
 __pycache__/
 *.pyc
 
+Debug/
+
+.vs/
+
+.idea/
 # Cake - Uncomment if you are using it
 # tools/**
 # !tools/packages.config

@@ -55,11 +55,7 @@ namespace ClubDeportivo
                 // quiere decir que el resultado tiene 1 fila por lo que el usuario EXISTE
                 MessageBox.Show(@"Ingreso exitoso", @"Mensaje del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //Instanciamos el menu principal para mostrarlo.
-                frmMenu menuPrincipal = new()
-                {
-                    rol = FrmInicio.Rol,
-                    usuario = FrmInicio.Usuario
-                }; 
+                frmMenu menuPrincipal = new();
                 menuPrincipal.Show(); //Se muestra el menu principal
                 this.Hide(); // se oculta el formulario del login
             }

@@ -67,11 +67,8 @@
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            frmMenu menuPrincipal = new() //Instanciamos el menu principal para mostrarlo.
-            {
-                rol = FrmInicio.Rol,
-                usuario = FrmInicio.Usuario
-            };
+            frmMenu menuPrincipal = new(); //Instanciamos el menu principal para mostrarlo.
+
             menuPrincipal.Show(); //Se muestra el menu principal
             this.Hide(); // se oculta el formulario del login
         }

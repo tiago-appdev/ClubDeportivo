@@ -21,7 +21,7 @@ namespace ClubDeportivo
         internal string? usuario;
         private void frmMenu_Load(object sender, EventArgs e)
         {
-            lblIngreso.Text = "USUARIO: " + usuario + " " + "(" + rol +
+            lblIngreso.Text = "USUARIO: " + FrmInicio.Usuario + " " + "(" + FrmInicio.Rol +
             ")";
         }
 
