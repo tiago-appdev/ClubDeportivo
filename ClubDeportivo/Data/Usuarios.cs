@@ -1,7 +1,7 @@
-﻿using MySql.Data.MySqlClient;
-using System.Data;
+﻿using System.Data;
+using MySql.Data.MySqlClient;
 
-namespace ClubDeportivo.Datos
+namespace ClubDeportivo.Data
 {
     internal class Usuarios
     {
@@ -27,16 +27,12 @@ namespace ClubDeportivo.Datos
 
                 // abrimos la conexion
                 sqlCon.Open();
-                MySqlDataReader? resultado = comando.ExecuteReader(); // variable de tipo datareader
+                var resultado = comando.ExecuteReader(); // variable de tipo datareader
 
                 tabla.Load(resultado); // cargamos la tabla con el resultado.
 
                 return tabla;
                 // de esta forma esta asociado el metodo con el procedure que esta almacenado en MySQL
-            }
-            catch (Exception)
-            {
-                throw;
             }
             // como proceso final
             finally

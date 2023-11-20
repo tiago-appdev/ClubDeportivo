@@ -1,5 +1,6 @@
 ﻿using System.Drawing.Imaging;
 using System.Drawing.Printing;
+using System.Globalization;
 using iText.Kernel.Pdf;
 using iText.Layout;
 
@@ -18,7 +19,7 @@ namespace ClubDeportivo
             fecha.Text = fechaActual;
             tipoSocio.Text = tipo.ToUpper();
             formaPago.Text = formaDePago.ToUpper();
-            montoPesos.Text = monto.ToString();
+            montoPesos.Text = monto.ToString(CultureInfo.InvariantCulture);
             nombreSocio.Text = nombre.ToUpper();
             label7.Text = nroComprobante;
             label10.Text = "NRO. " + tipo.ToUpper();
@@ -32,36 +33,36 @@ namespace ClubDeportivo
             {
                 buttonImprimir.Visible = false;
 
-                PrintDocument pd = new PrintDocument();
-                pd.PrintPage += new PrintPageEventHandler(ImprimirForm1);
+                var pd = new PrintDocument();
+                pd.PrintPage += ImprimirForm1;
 
-                PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
+                var printPreviewDialog = new PrintPreviewDialog();
                 printPreviewDialog.Document = pd;
                 printPreviewDialog.ShowDialog();
 
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                var saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Filter = "PDF Files|*.pdf";
                 saveFileDialog.Title = "Save PDF File";
                 saveFileDialog.FileName = "Comprobante.pdf";
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    string filePath = saveFileDialog.FileName;
+                    var filePath = saveFileDialog.FileName;
 
-                    Bitmap bmp = ScreenshotDeFormulario(this);
+                    var bmp = ScreenshotDeFormulario(this);
 
                     bmp.Save("temp.png", ImageFormat.Png);
 
-                    using (PdfWriter writer = new PdfWriter(filePath))
+                    using (var writer = new PdfWriter(filePath))
                     {
-                        using (PdfDocument pdf = new PdfDocument(writer))
+                        using (var pdf = new PdfDocument(writer))
                         {
-                            Document document = new Document(pdf);
+                            var document = new Document(pdf);
 
-                            iText.Kernel.Geom.PageSize pageSize = new iText.Kernel.Geom.PageSize(bmp.Width, bmp.Height);
+                            var pageSize = new iText.Kernel.Geom.PageSize(bmp.Width, bmp.Height);
                             pdf.SetDefaultPageSize(pageSize);
 
-                            iText.Layout.Element.Image img = new iText.Layout.Element.Image(iText.IO.Image.ImageDataFactory.Create("temp.png"));
+                            var img = new iText.Layout.Element.Image(iText.IO.Image.ImageDataFactory.Create("temp.png"));
                             document.Add(img);
 
                             document.Close();
@@ -87,7 +88,7 @@ namespace ClubDeportivo
                 }
                 else
                 {
-                    frmMenu menuPrincipal = new frmMenu();
+                    var menuPrincipal = new FrmMenu();
                     menuPrincipal.Show();
                 }
                 this.Hide();
@@ -98,15 +99,15 @@ namespace ClubDeportivo
             }
         }
 
-        public static Bitmap ScreenshotDeFormulario(Form window)
+        private static Bitmap ScreenshotDeFormulario(Form window)
         {
             var b = new Bitmap(window.Width, window.Height);
             window.DrawToBitmap(b, new Rectangle(0, 0, window.Width, window.Height));
 
-            Point p = window.PointToScreen(Point.Empty);
+            var p = window.PointToScreen(Point.Empty);
 
-            Bitmap target = new Bitmap(window.ClientSize.Width, window.ClientSize.Height);
-            using (Graphics g = Graphics.FromImage(target))
+            var target = new Bitmap(window.ClientSize.Width, window.ClientSize.Height);
+            using (var g = Graphics.FromImage(target))
             {
                 g.DrawImage(b, 0, 0,
                             new Rectangle(p.X - window.Location.X, p.Y - window.Location.Y,
@@ -122,9 +123,9 @@ namespace ClubDeportivo
         {
             try
             {
-                Bitmap bmp = ScreenshotDeFormulario(this);
+                var bmp = ScreenshotDeFormulario(this);
 
-                e.Graphics.DrawImage(bmp, 0, 0, bmp.Width, bmp.Height);
+                e.Graphics?.DrawImage(bmp, 0, 0, bmp.Width, bmp.Height);
 
                 bmp.Dispose();
             }

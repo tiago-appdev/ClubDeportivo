@@ -15,28 +15,28 @@ namespace ClubDeportivo
         private void CredencialSocio_Load(object sender, EventArgs e)
         {
             numSocio.Text = socio;
-            string[] nameParts = nombre.Split(' ');
+            var nameParts = nombre.Split(' ');
 
-            string firstName = (nameParts.Length > 0) ? nameParts[0] : string.Empty;
-            string lastName = (nameParts.Length > 1) ? nameParts[1] : string.Empty;
+            var firstName = (nameParts.Length > 0) ? nameParts[0] : string.Empty;
+            var lastName = (nameParts.Length > 1) ? nameParts[1] : string.Empty;
 
-            string formattedName = $"{firstName}{Environment.NewLine}{lastName}";
+            var formattedName = $"{firstName}{Environment.NewLine}{lastName}";
 
             nombreCortoSocio.Text = formattedName.ToUpper();
 
             // autogenerar numero de tarjeta en base a datos de cliente
-            string generatedNumber = GenerateCredentialNumber(dni, socio);
+            var generatedNumber = GenerateCredentialNumber(dni, socio);
             nroTarjeta.Text = generatedNumber;
         }
 
-        private string GenerateCredentialNumber(string dni, string socioNumber)
+        private string GenerateCredentialNumber(string id, string socioNumber)
         {
-            string year = DateTime.Now.Year.ToString().Substring(2);
+            var year = DateTime.Now.Year.ToString().Substring(2);
 
-            dni = dni.PadLeft(8, '0').Substring(0, 8);
+            id = id.PadLeft(8, '0').Substring(0, 8);
             socioNumber = socioNumber.PadLeft(2, '0').Substring(0, 2);
 
-            string generatedNumber = $"{dni}{socioNumber}{year}";
+            var generatedNumber = $"{id}{socioNumber}{year}";
 
             return $"{generatedNumber.Substring(0, 4)} {generatedNumber.Substring(4, 4)} {generatedNumber.Substring(8, 4)}";
         }
@@ -47,36 +47,36 @@ namespace ClubDeportivo
             {
                 buttonImprimir.Visible = false;
 
-                PrintDocument pd = new PrintDocument();
-                pd.PrintPage += new PrintPageEventHandler(ImprimirForm1);
+                var pd = new PrintDocument();
+                pd.PrintPage += ImprimirForm1;
 
-                PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
+                var printPreviewDialog = new PrintPreviewDialog();
                 printPreviewDialog.Document = pd;
                 printPreviewDialog.ShowDialog();
 
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
+                var saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Filter = "PDF Files|*.pdf";
                 saveFileDialog.Title = "Save PDF File";
                 saveFileDialog.FileName = "Carnet.pdf";
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    string filePath = saveFileDialog.FileName;
+                    var filePath = saveFileDialog.FileName;
 
-                    Bitmap bmp = ScreenshotDeFormulario(this);
+                    var bmp = ScreenshotDeFormulario(this);
 
                     bmp.Save("temp.png", ImageFormat.Png);
 
-                    using (PdfWriter writer = new PdfWriter(filePath))
+                    using (var writer = new PdfWriter(filePath))
                     {
-                        using (PdfDocument pdf = new PdfDocument(writer))
+                        using (var pdf = new PdfDocument(writer))
                         {
-                            Document document = new Document(pdf);
+                            var document = new Document(pdf);
 
-                            iText.Kernel.Geom.PageSize pageSize = new iText.Kernel.Geom.PageSize(bmp.Width, bmp.Height);
+                            var pageSize = new iText.Kernel.Geom.PageSize(bmp.Width, bmp.Height);
                             pdf.SetDefaultPageSize(pageSize);
 
-                            iText.Layout.Element.Image img = new iText.Layout.Element.Image(iText.IO.Image.ImageDataFactory.Create("temp.png"));
+                            var img = new iText.Layout.Element.Image(iText.IO.Image.ImageDataFactory.Create("temp.png"));
                             document.Add(img);
 
                             document.Close();
@@ -93,7 +93,7 @@ namespace ClubDeportivo
                     MessageBox.Show("Operación cancelada", "AVISO DEL SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
-                frmMenu menuPrincipal = new frmMenu();
+                var menuPrincipal = new FrmMenu();
                 menuPrincipal.Show();
                 this.Hide();
             }
@@ -102,20 +102,21 @@ namespace ClubDeportivo
                 MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        public static Bitmap ScreenshotDeFormulario(FrmCredencialSocio form)
-        {
-            Bitmap background = new Bitmap(form.Width, form.Height);
 
-            using (Graphics g = Graphics.FromImage(background))
+        private static Bitmap ScreenshotDeFormulario(FrmCredencialSocio form)
+        {
+            var background = new Bitmap(form.Width, form.Height);
+
+            using (Graphics.FromImage(background))
             {
                 form.DrawToBitmap(background, new Rectangle(0, 0, form.Width, form.Height));
             }
 
-            Point p = form.PointToScreen(Point.Empty);
+            var p = form.PointToScreen(Point.Empty);
 
-            Bitmap target = new Bitmap(form.ClientSize.Width, form.ClientSize.Height);
+            var target = new Bitmap(form.ClientSize.Width, form.ClientSize.Height);
 
-            using (Graphics g = Graphics.FromImage(target))
+            using (var g = Graphics.FromImage(target))
             {
                 g.DrawImage(background, 0, 0,
             new Rectangle(p.X - form.Location.X, p.Y - form.Location.Y,
@@ -146,9 +147,9 @@ namespace ClubDeportivo
         {
             try
             {
-                Bitmap bmp = ScreenshotDeFormulario(this);
+                var bmp = ScreenshotDeFormulario(this);
 
-                e.Graphics.DrawImage(bmp, 0, 0, bmp.Width, bmp.Height);
+                e.Graphics?.DrawImage(bmp, 0, 0, bmp.Width, bmp.Height);
 
                 bmp.Dispose();
             }

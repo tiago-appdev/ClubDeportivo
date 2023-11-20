@@ -1,8 +1,7 @@
-﻿using MySql.Data.MySqlClient;
+﻿using DotEnv.Core;
+using MySql.Data.MySqlClient;
 
-using DotEnv.Core;
-
-namespace ClubDeportivo.Datos
+namespace ClubDeportivo.Data
 {
     internal class Conexion
     {
@@ -30,12 +29,11 @@ namespace ClubDeportivo.Datos
             MySqlConnection conexion = new();
             try
             {
-                string connectionString = $"Server={_servidor};Port={_puerto};Database={_baseDatos};User={_usuario};Password={_clave};";
+                var connectionString = $"Server={_servidor};Port={_puerto};Database={_baseDatos};User={_usuario};Password={_clave};";
                 conexion.ConnectionString = connectionString;
             }
             catch (Exception ex)
             {
-                // Handle any connection error here
                 Console.WriteLine("Error connecting to the database: " + ex.Message);
                 throw;
             }
@@ -44,7 +42,7 @@ namespace ClubDeportivo.Datos
 
         public static Conexion GetInstancia()
         {
-            return _con ??= new Conexion(); // se crea una nueva
+            return _con ??= new Conexion();
         }
     }
 }

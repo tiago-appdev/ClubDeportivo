@@ -18,28 +18,28 @@
             }
             else
             {
-                string nombre = txtNombre.Text;
-                string apellido = txtApellido.Text;
-                string telefono = txtNumero.Text;
-                string direccion = txtDireccion.Text;
-                string tipoCliente = cmbTipo.Text;
-                string dni = txtDni.Text;
+                var nombre = txtNombre.Text;
+                var apellido = txtApellido.Text;
+                var telefono = txtNumero.Text;
+                var direccion = txtDireccion.Text;
+                var tipoCliente = cmbTipo.Text;
+                var dni = txtDni.Text;
 
                 Cliente cliente;
 
                 // El cobro es distinto dependiendo del tipo de socio
                 if (tipoCliente == "Socio")
                 {
-                    cliente = new Socio(nombre, apellido, direccion, telefono, new Cuota((decimal)500.00), 0, dni);
+                    cliente = new Socio(nombre, apellido, direccion, telefono, new Cuota((decimal)500.00), dni);
                 }
                 else
                 {
-                    cliente = new NoSocio(nombre, apellido, direccion, telefono, new Cuota((decimal)250.00), 0, dni);
+                    cliente = new NoSocio(nombre, apellido, direccion, telefono, new Cuota((decimal)250.00), dni);
                 }
 
                 try
                 {
-                    int? id = cliente.RegistrarCliente(cliente);
+                    var id = cliente.RegistrarCliente(cliente);
                     MessageBox.Show("Se almaceno con exito con el codigo Nro" + id, "AVISO",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Question);
@@ -67,7 +67,7 @@
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            frmMenu menuPrincipal = new(); //Instanciamos el menu principal para mostrarlo.
+            FrmMenu menuPrincipal = new(); //Instanciamos el menu principal para mostrarlo.
 
             menuPrincipal.Show(); //Se muestra el menu principal
             this.Hide(); // se oculta el formulario del login

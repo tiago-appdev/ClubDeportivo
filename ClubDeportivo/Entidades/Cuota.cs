@@ -3,7 +3,7 @@ namespace ClubDeportivo
     public class Cuota
     {
         public decimal Monto { get; set; }
-        public bool Pagada { get; set; }
+        private bool Pagada { get; set; }
         public DateTime FechaDeVencimiento { get; set; }
 
         public Cuota(decimal monto)
@@ -29,7 +29,7 @@ namespace ClubDeportivo
         {
             if (!Pagada)
             {
-                decimal montoTotal = Monto;
+                var montoTotal = Monto;
                 if (cuotas > 1)
                 {
                     montoTotal = Monto * (decimal)1.1;

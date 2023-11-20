@@ -1,6 +1,6 @@
 ﻿namespace ClubDeportivo
 {
-    partial class frmMenu
+    partial class FrmMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             lblIngreso = new Label();
             btnSalir = new Button();
             btnRegistrar = new Button();
@@ -109,7 +109,7 @@
             Controls.Add(btnSalir);
             Controls.Add(lblIngreso);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "frmMenu";
+            Name = "FrmMenu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "VENTANA PRINCIPAL";
             Load += frmMenu_Load;

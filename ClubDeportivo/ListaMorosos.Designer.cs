@@ -56,7 +56,7 @@ namespace ClubDeportivo
 
         private void volverMainMenuButton_Click(object sender, EventArgs e)
         {
-            frmMenu menuPrincipal = new frmMenu();
+            FrmMenu menuPrincipal = new FrmMenu();
             menuPrincipal.Show();
             this.Hide();
         }

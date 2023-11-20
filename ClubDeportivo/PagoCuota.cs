@@ -1,6 +1,7 @@
-﻿using ClubDeportivo.Datos;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System.Data;
+using System.Globalization;
+using ClubDeportivo.Data;
 
 namespace ClubDeportivo
 {
@@ -14,9 +15,9 @@ namespace ClubDeportivo
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
             // Chequear condiciones para habilitar o deshabilitar el boton de pago
-            bool isCuotaAmountValid = !string.IsNullOrEmpty(cuotaAmountTextBox.Text);
-            bool isFormaDePagoSelected = radioButton1.Checked || ((radioButton2.Checked && !string.IsNullOrEmpty(cardNumberTextBox.Text) && !string.IsNullOrEmpty(cardExpirationTextBox.Text) && !string.IsNullOrEmpty(cardCvvTextBox.Text)));
-            bool isActivitySelected = activityComboBox.SelectedIndex != -1 || cliente.Tipo != "No Socio";
+            var isCuotaAmountValid = !string.IsNullOrEmpty(cuotaAmountTextBox.Text);
+            var isFormaDePagoSelected = radioButton1.Checked || ((radioButton2.Checked && !string.IsNullOrEmpty(cardNumberTextBox.Text) && !string.IsNullOrEmpty(cardExpirationTextBox.Text) && !string.IsNullOrEmpty(cardCvvTextBox.Text)));
+            var isActivitySelected = activityComboBox.SelectedIndex != -1 || cliente.Tipo != "No Socio";
             pagarButton.Enabled = isCuotaAmountValid && isFormaDePagoSelected && isActivitySelected;
         }
 
@@ -28,7 +29,7 @@ namespace ClubDeportivo
             try
             {
                 Clientes clientesDb = new();
-                bool? id = clientesDb.PagarCuota(cliente);
+                clientesDb.PagarCuota(cliente);
             }
             catch (Exception ex)
             {
@@ -43,13 +44,13 @@ namespace ClubDeportivo
 
         private void volverButton_Click(object sender, EventArgs e)
         {
-            frmMenu menuPrincipal = new(); //Instanciamos el menu principal para mostrarlo.
+            FrmMenu menuPrincipal = new(); //Instanciamos el menu principal para mostrarlo.
             menuPrincipal.Show(); //Se muestra el menu principal
             this.Hide(); // se oculta el formulario del login
         }
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            bool isTarjetaSelected = radioButton2.Checked;
+            var isTarjetaSelected = radioButton2.Checked;
             label4.Visible = isTarjetaSelected;
             cardNumberTextBox.Visible = isTarjetaSelected;
             label5.Visible = isTarjetaSelected;
@@ -63,7 +64,7 @@ namespace ClubDeportivo
 
         private void verificarSocioButton_Click(object sender, EventArgs e)
         {
-            MySqlConnection sqlCon = new MySqlConnection();
+            var sqlCon = new MySqlConnection();
             try
             {
                 if (socioNumberTextBox.Text == string.Empty)
@@ -71,7 +72,7 @@ namespace ClubDeportivo
                     throw new Exception("Debe ingresar un número de socio");
                 }
                 sqlCon = Conexion.GetInstancia().CrearConexion();
-                string comprobanteQuery = @"
+                var comprobanteQuery = @"
 SELECT
     CASE
         WHEN c.Tipo = 'Socio' THEN s.Numero_De_Socio
@@ -103,7 +104,7 @@ JOIN Cuotas cu ON COALESCE(s.Cuota_id, ns.Cuota_id) = cu.Cuota_id
 LEFT JOIN Actividades a ON c.Tipo = 'No Socio' AND a.Numero_De_Actividad = cu.Cuota_id
 WHERE
     c.Cliente_id = " + socioNumberTextBox.Text;
-                MySqlCommand comando = new MySqlCommand(comprobanteQuery, sqlCon);
+                var comando = new MySqlCommand(comprobanteQuery, sqlCon);
                 comando.CommandType = CommandType.Text;
                 sqlCon.Open();
                 MySqlDataReader reader;
@@ -118,11 +119,11 @@ WHERE
                     }
                     if (reader.GetString(6) == "Socio")
                     {
-                        cliente = new Socio(reader.GetString(1), reader.GetString(2), reader.GetString(4), reader.GetString(5), new Cuota(reader.GetDecimal(10)), 0, reader.GetString(3));
+                        cliente = new Socio(reader.GetString(1), reader.GetString(2), reader.GetString(4), reader.GetString(5), new Cuota(reader.GetDecimal(10)), reader.GetString(3));
                     }
                     else
                     {
-                        cliente = new NoSocio(reader.GetString(1), reader.GetString(2), reader.GetString(4), reader.GetString(5), new Cuota(reader.GetDecimal(8)), 0, reader.GetString(3));
+                        cliente = new NoSocio(reader.GetString(1), reader.GetString(2), reader.GetString(4), reader.GetString(5), new Cuota(reader.GetDecimal(8)), reader.GetString(3));
                         label2.Visible = true;
                         cuotaAmountTextBox.Location = new Point(cuotaAmountTextBox.Location.X, cuotaAmountTextBox.Location.Y + 35);
                         label3.Location = new Point(label3.Location.X, label3.Location.Y + 35);
@@ -136,14 +137,13 @@ WHERE
                     comprobante.socio = reader.GetString(0);
                     comprobante.tipo = cliente.Tipo;
                     comprobante.formaDePago = radioButton1.Checked ? "Efectivo" : "Tarjeta";
+                    if (cliente.Cuota == null) return;
                     comprobante.monto = cliente.Cuota.Monto;
                     comprobante.nombre = cliente.Nombre + " " + cliente.Apellido;
                     comprobante.nroComprobante = reader.GetString(11);
                     comprobante.dni = cliente.Dni;
 
-                    cuotaAmountTextBox.Text = cliente.Cuota.Monto.ToString();
-
-
+                    cuotaAmountTextBox.Text = cliente.Cuota.Monto.ToString(CultureInfo.InvariantCulture);
                 }
                 else
                 {

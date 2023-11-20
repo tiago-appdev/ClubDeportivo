@@ -1,12 +1,12 @@
 ﻿using System.Data;
-using ClubDeportivo.Datos;
+using ClubDeportivo.Data;
 using MySql.Data.MySqlClient;
 
 namespace ClubDeportivo
 {
-    public partial class frmMenu : Form
+    public partial class FrmMenu : Form
     {
-        public frmMenu()
+        public FrmMenu()
         {
             InitializeComponent();
         }
@@ -23,26 +23,24 @@ namespace ClubDeportivo
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            FrmRegistro registro = new FrmRegistro();
+            var registro = new FrmRegistro();
             registro.Show();
             this.Hide();
         }
         private void btnPagarCuota_Click(object sender, EventArgs e)
         {
-            FrmPago formularioDePago = new FrmPago();
+            var formularioDePago = new FrmPago();
             formularioDePago.Show();
             this.Hide();
         }
         private void btnListarMorosos_click(object sender, EventArgs e)
         {
-            FrmLista listaDeClientes = new FrmLista();
-            MySqlConnection sqlCon = new MySqlConnection();
+            var listaDeClientes = new FrmLista();
             try
             {
-                sqlCon = Conexion.GetInstancia().CrearConexion();
+                var sqlCon = Conexion.GetInstancia().CrearConexion();
 
-                // Query to retrieve clients with unpaid cuotas where the current date is over the FechaDeVencimiento.
-                string query = @"
+                const string query = @"
 SELECT
     CONCAT(c.Nombre, ' ', c.Apellido) AS ClienteNombre,
     c.DNI AS DniCliente,
@@ -64,9 +62,9 @@ FROM
 WHERE
     cu.FechaDeVencimiento < CURDATE() AND cu.Pagada = 0;";
 
-                MySqlCommand cmd = new MySqlCommand(query, sqlCon);
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
+                var cmd = new MySqlCommand(query, sqlCon);
+                var da = new MySqlDataAdapter(cmd);
+                var dt = new DataTable();
 
                 sqlCon.Open();
                 da.Fill(dt);
@@ -88,7 +86,7 @@ WHERE
         }
         private void btnReimprimir_Click(object sender, EventArgs e)
         {
-            FrmCarnet formularioDeReimpresion = new FrmCarnet();
+            var formularioDeReimpresion = new FrmCarnet();
             formularioDeReimpresion.Show();
             this.Hide();
         }

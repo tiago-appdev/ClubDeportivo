@@ -1,7 +1,7 @@
-using MySql.Data.MySqlClient;
 using System.Data;
+using MySql.Data.MySqlClient;
 
-namespace ClubDeportivo.Datos
+namespace ClubDeportivo.Data
 {
     internal class Clientes
     {
