@@ -2,7 +2,7 @@ namespace ClubDeportivo
 {
     partial class FrmLista
     {
-        private System.Windows.Forms.DataGridView dataGridViewCuotasPendientes;
+        public System.Windows.Forms.DataGridView dataGridViewCuotasPendientes;
         private System.Windows.Forms.Button volverMainMenuButton;
 
         private void InitializeComponent()
