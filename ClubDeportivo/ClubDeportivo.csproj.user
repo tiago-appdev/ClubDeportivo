@@ -22,5 +22,8 @@
     <Compile Update="RegistroCliente.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ReimprimirCarnet.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
