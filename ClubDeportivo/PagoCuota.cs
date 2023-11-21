@@ -17,7 +17,7 @@ namespace ClubDeportivo
             // Chequear condiciones para habilitar o deshabilitar el boton de pago
             var isCuotaAmountValid = !string.IsNullOrEmpty(cuotaAmountTextBox.Text);
             var isFormaDePagoSelected = radioButton1.Checked || ((radioButton2.Checked && !string.IsNullOrEmpty(cardNumberTextBox.Text) && !string.IsNullOrEmpty(cardExpirationTextBox.Text) && !string.IsNullOrEmpty(cardCvvTextBox.Text)));
-            var isActivitySelected = activityComboBox.SelectedIndex != -1 || cliente.Tipo != "No Socio";
+            var isActivitySelected = activityComboBox.SelectedIndex != -1 || (cliente != null && cliente.Tipo != "No Socio");
             pagarButton.Enabled = isCuotaAmountValid && isFormaDePagoSelected && isActivitySelected;
         }
 
@@ -25,6 +25,8 @@ namespace ClubDeportivo
         private void pagarButton_Click(object sender, EventArgs e)
         {
             comprobante.fechaActual = DateTime.Now.ToString("dd/MM/yyyy");
+            comprobante.formaDePago = radioButton1.Checked ? "EFECTIVO" : "TARJETA";
+
 
             try
             {
@@ -136,7 +138,6 @@ WHERE
 
                     comprobante.socio = reader.GetString(0);
                     comprobante.tipo = cliente.Tipo;
-                    comprobante.formaDePago = radioButton1.Checked ? "Efectivo" : "Tarjeta";
                     if (cliente.Cuota == null) return;
                     comprobante.monto = cliente.Cuota.Monto;
                     comprobante.nombre = cliente.Nombre + " " + cliente.Apellido;

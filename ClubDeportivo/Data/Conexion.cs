@@ -14,7 +14,6 @@ namespace ClubDeportivo.Data
 
         private Conexion()
         {
-            // Load .env file
             new EnvLoader().Load();
             var reader = new EnvReader();
             this._baseDatos = reader.GetStringValue("DB_NAME");

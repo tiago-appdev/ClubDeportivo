@@ -18,7 +18,7 @@ namespace ClubDeportivo
             numSocio.Text = socio;
             fecha.Text = fechaActual;
             tipoSocio.Text = tipo.ToUpper();
-            formaPago.Text = formaDePago.ToUpper();
+            formaPago.Text = formaDePago;
             montoPesos.Text = monto.ToString(CultureInfo.InvariantCulture);
             nombreSocio.Text = nombre.ToUpper();
             label7.Text = nroComprobante;

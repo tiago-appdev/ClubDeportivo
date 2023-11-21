@@ -15,6 +15,8 @@ namespace ClubDeportivo
         private void CredencialSocio_Load(object sender, EventArgs e)
         {
             numSocio.Text = socio;
+
+            // formateamos el nombre para que quede en dos lineas
             var nameParts = nombre.Split(' ');
 
             var firstName = (nameParts.Length > 0) ? nameParts[0] : string.Empty;
@@ -24,7 +26,7 @@ namespace ClubDeportivo
 
             nombreCortoSocio.Text = formattedName.ToUpper();
 
-            // autogenerar numero de tarjeta en base a datos de cliente
+            // autogeneramos numero de tarjeta en base a datos de cliente
             var generatedNumber = GenerateCredentialNumber(dni, socio);
             nroTarjeta.Text = generatedNumber;
         }
@@ -52,6 +54,7 @@ namespace ClubDeportivo
 
                 var printPreviewDialog = new PrintPreviewDialog();
                 printPreviewDialog.Document = pd;
+                printPreviewDialog.Document.PrinterSettings.PrintToFile = false;
                 printPreviewDialog.ShowDialog();
 
                 var saveFileDialog = new SaveFileDialog();
