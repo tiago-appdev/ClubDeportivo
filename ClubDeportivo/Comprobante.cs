@@ -38,6 +38,7 @@ namespace ClubDeportivo
 
                 var printPreviewDialog = new PrintPreviewDialog();
                 printPreviewDialog.Document = pd;
+                printPreviewDialog.Document.PrinterSettings.PrintToFile = false;
                 printPreviewDialog.ShowDialog();
 
                 var saveFileDialog = new SaveFileDialog();
