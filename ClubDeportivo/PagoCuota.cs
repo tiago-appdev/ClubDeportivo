@@ -109,8 +109,7 @@ WHERE
                 var comando = new MySqlCommand(comprobanteQuery, sqlCon);
                 comando.CommandType = CommandType.Text;
                 sqlCon.Open();
-                MySqlDataReader reader;
-                reader = comando.ExecuteReader();
+                var reader = comando.ExecuteReader();
                 if (reader.HasRows)
                 {
                     reader.Read();
@@ -158,7 +157,7 @@ WHERE
             finally
             {
                 if (sqlCon.State == ConnectionState.Open)
-                { sqlCon.Close(); };
+                { sqlCon.Close(); }
             }
 
         }
