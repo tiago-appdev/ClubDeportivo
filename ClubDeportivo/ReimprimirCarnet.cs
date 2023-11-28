@@ -105,7 +105,6 @@ WHERE
                 if (sqlCon.State == ConnectionState.Open)
                 { sqlCon.Close(); }
             }
-
         }
     }
 }

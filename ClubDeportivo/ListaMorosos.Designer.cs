@@ -44,6 +44,7 @@ namespace ClubDeportivo
             Controls.Add(volverMainMenuButton);
             Name = "FrmLista";
             Text = "Cuotas Pendientes";
+            Load += FrmLista_Load;
             StartPosition = FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)dataGridViewCuotasPendientes).EndInit();
             ResumeLayout(false);
