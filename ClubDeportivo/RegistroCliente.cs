@@ -12,7 +12,7 @@
             if (txtNombre.Text == "" || txtApellido.Text == "" ||
             txtDireccion.Text == "" || cmbTipo.Text == "" || txtNumero.Text == "" || txtDni.Text == "")
             {
-                MessageBox.Show("Debe completar datos requeridos (*) ",
+                MessageBox.Show("Debe completar todos los datos requeridos ",
                 "AVISO DEL SISTEMA", MessageBoxButtons.OK,
                 MessageBoxIcon.Error);
             }
