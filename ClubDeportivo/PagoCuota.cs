@@ -88,7 +88,7 @@ SELECT
     c.Telefono AS ClienteTelefono,
     c.Tipo AS TipoCliente,
     a.Nombre AS ActividadNombre,
-    a.Precio AS ActividadPrecio,
+    cu.Monto AS ActividadPrecio,
     cu.FechaDeVencimiento AS CuotaFechaVencimiento,
     cu.Monto AS CuotaMonto,
     cu.Cuota_id,
@@ -121,18 +121,12 @@ WHERE
                     if (reader.GetString(6) == "Socio")
                     {
                         cliente = new Socio(reader.GetString(1), reader.GetString(2), reader.GetString(4), reader.GetString(5), new Cuota(reader.GetDecimal(10)), reader.GetString(3));
+                        ResetUIForSocio();
                     }
                     else
                     {
                         cliente = new NoSocio(reader.GetString(1), reader.GetString(2), reader.GetString(4), reader.GetString(5), new Cuota(reader.GetDecimal(8)), reader.GetString(3));
-                        label2.Visible = true;
-                        cuotaAmountTextBox.Location = new Point(cuotaAmountTextBox.Location.X, cuotaAmountTextBox.Location.Y + 35);
-                        label3.Location = new Point(label3.Location.X, label3.Location.Y + 35);
-                        radioButton1.Location = new Point(radioButton1.Location.X, radioButton1.Location.Y + 35);
-                        radioButton2.Location = new Point(radioButton2.Location.X, radioButton2.Location.Y + 35);
-                        volverButton.Location = new Point(volverButton.Location.X, volverButton.Location.Y + 35);
-                        pagarButton.Location = new Point(pagarButton.Location.X, pagarButton.Location.Y + 35);
-                        activityComboBox.Visible = true;
+                        ResetUIForNoSocio();
                     }
 
                     comprobante.socio = reader.GetString(0);
@@ -162,7 +156,29 @@ WHERE
 
         }
 
+        private void ResetUIForNoSocio()
+        {
+            label2.Visible = true;
+            cuotaAmountTextBox.Location = new Point(201, 132);
+            label3.Location = new Point(75, 135);
+            radioButton1.Location = new Point(79, 170);
+            radioButton2.Location = new Point(201, 170);
+            volverButton.Location = new Point(201, 215);
+            pagarButton.Location = new Point(75, 215);
+            activityComboBox.Visible = true;
+        }
 
-        
+        private void ResetUIForSocio()
+        {
+            label2.Visible = false;
+            cuotaAmountTextBox.Location = new Point(201, 132 - 35);
+            label3.Location = new Point(75, 135 - 35);
+            radioButton1.Location = new Point(79, 170 - 35);
+            radioButton2.Location = new Point(201, 170 - 35);
+            volverButton.Location = new Point(201, 215 - 35);
+            pagarButton.Location = new Point(75, 215 - 35);
+            activityComboBox.Visible = false;
+        }
+
     }
 }
