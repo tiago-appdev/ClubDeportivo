@@ -1,3 +1,4 @@
+using ClubDeportivo.Data;
 namespace ClubDeportivo
 {
     public abstract class Cliente
@@ -27,7 +28,17 @@ namespace ClubDeportivo
 
         public virtual int? RegistrarCliente(Cliente cliente)
         {
-            return null;
+            try
+            {
+                Clientes clientesDb = new();
+                var id = clientesDb.RegistrarCliente(cliente);
+                if (id == 0) throw new Exception("No se pudo registrar el cliente");
+                return id;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
         }
 
 

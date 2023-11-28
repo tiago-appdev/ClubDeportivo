@@ -20,8 +20,6 @@ FROM
 WHERE
     c.DNI = Dni;
 
-SELECT existe; 
-
 SET
     id = 0;
 

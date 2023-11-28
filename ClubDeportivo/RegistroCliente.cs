@@ -40,7 +40,7 @@
                 try
                 {
                     var id = cliente.RegistrarCliente(cliente);
-                    MessageBox.Show("Se almaceno con exito con el codigo Nro" + id, "AVISO",
+                    MessageBox.Show("Se almaceno con exito con el numero de cliente: " + id, "AVISO",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Question);
                 }
@@ -73,15 +73,6 @@
             this.Hide(); // se oculta el formulario del login
         }
 
-        private void txtNumero_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 

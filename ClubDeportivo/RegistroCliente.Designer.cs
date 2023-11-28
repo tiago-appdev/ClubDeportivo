@@ -95,7 +95,6 @@
             txtNumero.Name = "txtNumero";
             txtNumero.Size = new Size(259, 23);
             txtNumero.TabIndex = 5;
-            txtNumero.TextChanged += txtNumero_TextChanged;
             // 
             // txtDni
             // 
@@ -143,7 +142,6 @@
             label4.Size = new Size(38, 17);
             label4.TabIndex = 9;
             label4.Text = "TIPO";
-            label4.Click += label4_Click;
             // 
             // label5
             // 
@@ -243,9 +241,9 @@
         private TextBox txtNombre;
         private TextBox txtApellido;
         private TextBox txtDireccion;
-        private ComboBox cmbTipo;
         private TextBox txtNumero;
         private TextBox txtDni;
+        private ComboBox cmbTipo;
         private Label label1;
         private Label label2;
         private Label label3;
