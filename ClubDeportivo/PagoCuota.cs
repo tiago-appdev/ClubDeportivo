@@ -10,6 +10,7 @@ namespace ClubDeportivo
         public FrmPago()
         {
             InitializeComponent();
+            this.FormClosing += FrmPago_FormClosing;
         }
 
         private void TextBox_TextChanged(object sender, EventArgs e)
@@ -161,5 +162,12 @@ WHERE
             }
 
         }
+
+        private void FrmPago_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        
     }
 }

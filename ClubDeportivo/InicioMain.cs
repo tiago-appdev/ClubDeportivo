@@ -10,6 +10,7 @@ namespace ClubDeportivo
         public FrmInicio()
         {
             InitializeComponent();
+            this.FormClosing += FrmInicio_FormClosing;
         }
 
         private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
@@ -79,6 +80,11 @@ namespace ClubDeportivo
             {
                 MessageBox.Show(@"Usuario y/o password incorrecto", @"Mensaje del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void FrmInicio_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -11,6 +11,7 @@ namespace ClubDeportivo
         public FrmComprobante()
         {
             InitializeComponent();
+            this.FormClosing += FrmComprobante_FormClosing;
         }
 
         private void ComprobanteForm_Load(object sender, EventArgs e)
@@ -134,6 +135,12 @@ namespace ClubDeportivo
             {
                 MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void FrmComprobante_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            e.Cancel = true;
         }
     }
 }

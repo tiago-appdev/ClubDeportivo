@@ -11,6 +11,7 @@ namespace ClubDeportivo
         public FrmCredencialSocio()
         {
             InitializeComponent();
+            this.FormClosing += FrmCredencialSocio_FormClosing;
         }
         private void CredencialSocio_Load(object sender, EventArgs e)
         {
@@ -160,6 +161,13 @@ namespace ClubDeportivo
             {
                 MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void FrmCredencialSocio_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var formularioDeReimpresion = new FrmCarnet();
+            formularioDeReimpresion.Show();
+            this.Hide();
         }
     }
 }

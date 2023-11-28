@@ -32,14 +32,14 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ClubDeportivo.Data.Clientes">
-    <Position X="9" Y="1.75" Width="2" />
+    <Position X="9.25" Y="2" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAIAAAA=</HashCode>
       <FileName>Data\Clientes.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClubDeportivo.Data.Usuarios">
-    <Position X="9" Y="0.5" Width="1.75" />
+    <Position X="9.25" Y="0.5" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Data\Usuarios.cs</FileName>

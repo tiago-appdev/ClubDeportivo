@@ -9,6 +9,7 @@ namespace ClubDeportivo
         public FrmMenu()
         {
             InitializeComponent();
+            this.FormClosing += FrmMenu_FormClosing;
         }
         private void frmMenu_Load(object sender, EventArgs e)
         {
@@ -89,6 +90,11 @@ WHERE
             var formularioDeReimpresion = new FrmCarnet();
             formularioDeReimpresion.Show();
             this.Hide();
+        }
+
+        private void FrmMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
 
     }
