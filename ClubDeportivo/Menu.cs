@@ -9,7 +9,6 @@ namespace ClubDeportivo
         public FrmMenu()
         {
             InitializeComponent();
-            this.FormClosing += FrmMenu_FormClosing;
         }
         private void frmMenu_Load(object sender, EventArgs e)
         {
@@ -19,7 +18,9 @@ namespace ClubDeportivo
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
+            // click en el boton de X para cerrar el formulario
             Application.Exit();
+
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
@@ -81,6 +82,7 @@ WHERE
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
             listaDeClientes.Show();
             this.Hide();
@@ -92,10 +94,6 @@ WHERE
             this.Hide();
         }
 
-        private void FrmMenu_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
 
     }
 }

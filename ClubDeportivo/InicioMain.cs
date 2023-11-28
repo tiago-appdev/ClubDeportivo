@@ -10,7 +10,6 @@ namespace ClubDeportivo
         public FrmInicio()
         {
             InitializeComponent();
-            this.FormClosing += FrmInicio_FormClosing;
         }
 
         private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
@@ -82,9 +81,5 @@ namespace ClubDeportivo
             }
         }
 
-        private void FrmInicio_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
     }
 }

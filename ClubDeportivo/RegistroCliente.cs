@@ -5,7 +5,6 @@
         public FrmRegistro()
         {
             InitializeComponent();
-            this.FormClosing += FrmRegistro_FormClosing;
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -82,11 +81,6 @@
         private void label4_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void FrmRegistro_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

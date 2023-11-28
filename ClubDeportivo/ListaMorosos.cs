@@ -5,14 +5,14 @@ namespace ClubDeportivo
         public FrmLista()
         {
             InitializeComponent();
-            this.FormClosing += FrmLista_FormClosing;
         }
 
-        private void FrmLista_FormClosing(object sender, FormClosingEventArgs e)
+
+        private void volverMainMenuButton_Click(object sender, EventArgs e)
         {
-            FrmMenu menuPrincipal = new(); //Instanciamos el menu principal para mostrarlo.
-            menuPrincipal.Show(); //Se muestra el menu principal
-            this.Hide(); // se oculta el formulario del login
+            FrmMenu menuPrincipal = new FrmMenu();
+            menuPrincipal.Show();
+            this.Hide();
         }
 
     }

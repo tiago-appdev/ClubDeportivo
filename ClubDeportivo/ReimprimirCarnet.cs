@@ -9,7 +9,6 @@ namespace ClubDeportivo
         public FrmCarnet()
         {
             InitializeComponent();
-            this.FormClosing += FrmCarnet_FormClosing;
         }
 
         private void volverButton_Click(object sender, EventArgs e)
@@ -107,11 +106,6 @@ WHERE
                 { sqlCon.Close(); }
             }
 
-        }
-
-        private void FrmCarnet_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

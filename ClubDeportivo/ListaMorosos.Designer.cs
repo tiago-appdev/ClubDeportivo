@@ -44,21 +44,10 @@ namespace ClubDeportivo
             Controls.Add(volverMainMenuButton);
             Name = "FrmLista";
             Text = "Cuotas Pendientes";
-            Load += CuotasPendientesForm_Load;
+            StartPosition = FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)dataGridViewCuotasPendientes).EndInit();
             ResumeLayout(false);
         }
 
-        private void CuotasPendientesForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void volverMainMenuButton_Click(object sender, EventArgs e)
-        {
-            FrmMenu menuPrincipal = new FrmMenu();
-            menuPrincipal.Show();
-            this.Hide();
-        }
     }
 }
