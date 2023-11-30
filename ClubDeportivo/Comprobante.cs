@@ -11,6 +11,7 @@ namespace ClubDeportivo
         public FrmComprobante()
         {
             InitializeComponent();
+            this.FormClosing += ComprobanteForm_FormClosing;
         }
 
         private void ComprobanteForm_Load(object sender, EventArgs e)
@@ -133,6 +134,22 @@ namespace ClubDeportivo
             catch (Exception ex)
             {
                 MessageBox.Show($"Ocurrió un error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ComprobanteForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (tipo == "Socio")
+            {
+                formularioDeCarnet.nombre = nombre;
+                formularioDeCarnet.socio = socio;
+                formularioDeCarnet.dni = dni;
+                formularioDeCarnet.Show();
+            }
+            else
+            {
+                var menuPrincipal = new FrmMenu();
+                menuPrincipal.Show();
             }
         }
     }
